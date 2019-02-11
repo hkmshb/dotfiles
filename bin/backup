@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# backs up all '.{name}' within ${HOME} into './bak'
+mkdir -p _bak
+cp ${HOME}/.* ./_bak/
