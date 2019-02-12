@@ -16,8 +16,11 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
-        autocrlf = true
+        editor = naon
+        whitespace = cr-at-eol
+        quotepath = false
+        autocrlf = input
+        pager = tr -d '\\r' | less -REX
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -33,4 +36,4 @@
         # Setting to git 2.0 default to suppress warning message
         default = simple
 [credential]
-	helper = osxkeychain
+        helper = osxkeychain
