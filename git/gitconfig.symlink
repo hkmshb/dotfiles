@@ -16,7 +16,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = naon
+        editor = nano
         whitespace = cr-at-eol
         quotepath = false
         autocrlf = input
