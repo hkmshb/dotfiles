@@ -1,3 +1,5 @@
 alias d='docker $*'
 alias d-c='docker-compose $*'
-alias d-rmdi='docker rmi $(docker images --quiet --filter "dangling=true")'
+alias d-prune='docker image prune -f && docker container prune -f'
+alias d-rmi-dangle='docker rmi $(docker images -f "dangling=true" -q)'
+alias d-c-dev='docker-compose -f docker-compose.dev.yml $*'
