@@ -2,7 +2,7 @@
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/workspace
+export PROJECTS=~/projects
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -53,13 +53,29 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-pyenv global 3.7.1 2.7.15
+pyenv global 3.8.1
 
-# rbenv for ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-rbenv global 2.6.1
+## rbenv for ruby
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#rbenv global 2.6.1
 
 # linuxbrew
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:/Users/abdulhakeem/.local/bin:$PATH"
 
+# gpg
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#gpgconf --launch gpg-agent
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google/cloudsdk/path.zsh.inc' ]; then . '/opt/google/cloudsdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google/cloudsdk/completion.zsh.inc' ]; then . '/opt/google/cloudsdk/completion.zsh.inc'; fi
+
+# zsh-autoenv
+export AUTOENV_FILE_ENTER=.env
+export AUTOENV_FILE_LEAVE=.env
+export AUTOENV_DEBUG=0 
+source ~/.dotfiles/lib/zsh-autoenv/autoenv.zsh
