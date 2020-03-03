@@ -462,6 +462,24 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "docker": {
+        "version": "2.2.0.3,42716",
+        "options": {
+          "full_name": "docker",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "vagrant": {
+        "version": "2.2.7",
+        "options": {
+          "full_name": "vagrant",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
@@ -470,7 +488,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.7",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e15b3b40d78192e1d79f971f93263eb887d40931",
+        "Homebrew/homebrew-core": "315b9f858edda64fedb0af242aedf022577845e6",
         "CLT": "11.3.1.0.1.1576735732",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"
