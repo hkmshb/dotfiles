@@ -1,0 +1,9 @@
+{
+    "window.zoomLevel": -0.5,
+    "svgviewer.showzoominout": true,
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.sideBar.location": "right",
+    "terminal.integrated.confirmOnExit": true
+}
