@@ -41,6 +41,19 @@ There's a few special files in the hierarchy.
   still keep those autoloaded files in your home directory. These get symlinked
   in when you run `script/bootstrap`.
 
+## linux prerequisites
+
+```sh
+# install core utils and tools
+sudo apt-get install build-essential git zsh
+
+# switch shell to zsh
+chsh -s /bin/zsh   
+```
+
+For switched shell to take effect, end session and re-login to the system.
+
+
 ## install
 
 Run this:
