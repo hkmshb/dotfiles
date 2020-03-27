@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 if [[ ! -d $(pyenv root)/plugins ]]; then
   # create plugins folder
   mkdir -p $(pyenv root)/plugins
