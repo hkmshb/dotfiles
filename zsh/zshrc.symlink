@@ -51,3 +51,7 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # zsh-autoenv
 source ~/.dotfiles/lib/zsh-autoenv/autoenv.zsh
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
