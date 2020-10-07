@@ -3,7 +3,7 @@ if [[ ! -d $(pyenv root)/plugins ]]; then
   mkdir -p $(pyenv root)/plugins
 
   # install python interpreter
-  pyenv install 3.8.1
+  pyenv install 3.8.5
 fi
 
 plugins=('virtualenv' 'update')
