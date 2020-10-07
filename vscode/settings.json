@@ -1,9 +1,41 @@
+
 {
-    "window.zoomLevel": -0.5,
-    "svgviewer.showzoominout": true,
+    "editor.foldingHighlight": false,
     "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80, 88
+    ],
+    "files.associations": {
+        ".env": "ini",
+        ".env.*": "ini"
+    },
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.*_cache": true,
+        "**/*.egg-info": true,
+        "**/*.py[doc]": true
+    },
     "files.trimTrailingWhitespace": true,
+    "joplin.sortNotes": true,
+    "joplin.token": "bf12aa318215f152bb9a2bea5427f97a3f7258f0bae713c8f8eb15a2fd1ada42745920114ec962b8401b0746cbe8c633af72669a11cccb77f8ba3e7addc4ab5e",
+    "markdown.preview.fontSize": 10,
+    "markdown.preview.lineHeight": 0.8,
+    "markdownlint.config": {
+        "MD013": false,
+        "MD032": false
+    },
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false,
+        "files.trimTrailingWhitespace": false
+    },
+    "python.languageServer": "Microsoft",
+    "python.showStartPage": false,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": -0.5,
     "workbench.iconTheme": "vscode-icons",
     "workbench.sideBar.location": "right",
+    "svgviewer.showzoominout": true,
+    "sonarlint.disableTelemetry": true,
     "terminal.integrated.confirmOnExit": true
 }
