@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+export CZROOT=${HOME}/.local/share/chezmoi
+export ZSH=${CZROOT}/zsh
+
+source ${ZSH}/_init.zsh
+source ${ZSH}/_window.zsh
+
+# load zsh config files
+typeset -U config_files
+config_files=($ZSH/*.tool.zsh)
+
+for file in $config_files; do
+    source $file
+done

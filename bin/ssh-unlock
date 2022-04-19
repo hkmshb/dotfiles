@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Usage: ssh-unlock
+#
+# Store passphrases in your keychain.
+
+ssh-add -K ~/.ssh/id_rsa

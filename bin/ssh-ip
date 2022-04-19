@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Usage: ssh-ip
+#
+# Display ip address for vagrant box described by a vagrantfile
+# NOTE: (current directory should have a vagrantfile)
+
+vagrant ssh -c "hostname -I | cut -d' ' -f2" 2>/dev/null
