@@ -1,15 +1,45 @@
 #!/usr/bin/env zsh
 
-export CZROOT=${HOME}/.local/share/chezmoi
-export ZSH=${CZROOT}/zsh
+export CZROOT=$HOME/.local/share/chezmoi
+export ZSH=$CZROOT/zsh
 
-source ${ZSH}/_init.zsh
-source ${ZSH}/_window.zsh
+# project folder that we can `c [tab]` to
+export PROJECTS=$HOME/projects
 
-# load zsh config files
+# collect all .zsh files
 typeset -U config_files
-config_files=($ZSH/*.tool.zsh)
+config_files=($ZSH/**/*.zsh)
 
-for file in $config_files; do
-    source $file
+# process all scripts except plugins and completions
+for f in ${${config_file:#*/*.plugin.zsh}:#*/**/*completion.zsh}; do
+    source $f
 done
+
+# process all plugins
+for f in ${(M)config_files:#*/*.zsh}; do
+    source $f
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# processing completion scripts after autocomplete loads
+for f in ${(M)config_files:#*/**/*completion.zsh}; do
+    source $f
+done
+
+unset config_files
+
+# Better history
+# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey "^[[A" up-line-or-beginning-search      # Up
+bindkey "^[[B" down-line-or-beginning-search    # Down
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
