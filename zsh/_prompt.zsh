@@ -1,17 +1,3 @@
-## aliases
-#--------------------------------------
-alias gb='git branch'
-alias gc='git commit'
-alias gco='git checkout'
-alias gd='git diff'
-alias gds='git diff --staged'
-alias glo='git log --oneline --decorate'
-alias glog='git log --oneline --decorate --graph'
-alias gs='git status -sb'
-
-
-## functions
-#--------------------------------------
 autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
@@ -76,11 +62,11 @@ battery_status() {
 
   if [[ $(sysctl -n hw.model) == *"Book"* ]]
   then
-    $ZSH/bin/battery-status
+    $CZROOT/bin/battery-status
   fi
 }
 
-export PROMPT=$'\n$(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
