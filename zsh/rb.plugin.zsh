@@ -4,9 +4,7 @@
 
 ## activations
 #-----------------------------------------------
-if (( $+commands[pyenv] )); then
-    eval "$(pyenv init --path)"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-    pyenv global 3.10.4
+if (( $+commands[rbenv] )); then
+    eval "$(rbenv init - --path)"
+    rbenv global 3.1.1
 fi
