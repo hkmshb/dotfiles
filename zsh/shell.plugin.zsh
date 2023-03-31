@@ -1,6 +1,7 @@
 ## exports
 #---------------------------------------
 export PATH="./bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$CZROOT/bin:$PATH"
+export PATH="/opt/protobuf/bin:$PATH"
 
 
 ## aliases

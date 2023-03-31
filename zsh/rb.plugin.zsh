@@ -6,5 +6,5 @@
 #-----------------------------------------------
 if (( $+commands[rbenv] )); then
     eval "$(rbenv init - --path)"
-    rbenv global 3.1.1
+    rbenv global 2.7.2
 fi
