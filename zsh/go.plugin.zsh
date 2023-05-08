@@ -18,7 +18,7 @@ alias arm-go='GOOS=linux GOARCH=arm CC_FOR_TARGET=arm-linux-gnueabi-gcc go'
 #--------------------------------------
 if (( $+commands[goenv] )); then
 	eval "$(goenv init -)"
-	goenv global 1.19.3
+	goenv global 1.20.1
 fi
 
 export PATH=${GOROOT}/bin:${PATH}

@@ -12,11 +12,17 @@ alias gds='git diff --staged'
 alias glo='git log --oneline --decorate'
 alias glog='git log --oneline --decorate --graph'
 
+alias gcdev='git checkout dev'
+alias gcdev!='git checkout dev && git pull'
+
 alias gcd='git checkout develop'
 alias gcd!='git checkout develop && git pull'
 
 alias gcm='git checkout main'
 alias gcm!='git checkout main && git pull'
+
+alias gcmaster='git checkout master'
+alias gcmaster!='git checkout master && git pull'
 
 alias gcs='git checkout staging'
 alias gcs!='git checkout staging && git pull'
