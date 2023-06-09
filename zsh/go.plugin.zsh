@@ -1,13 +1,8 @@
 ## exports
 #---------------------------------------
 export GO111MODULE=on
-# export GOPATH=${HOME}/go
-# export GOROOT=/Users/abdulhakeem/sdk/go1.18
-# export PATH=${GOPATH}/bin:${PATH}
 
-export GOBIN=${HOME}/go/bin
 export GOENV_ROOT=${HOME}/.goenv
-
 export PATH=${GOENV_ROOT}/bin:${PATH}
 
 ## aliases
@@ -21,6 +16,7 @@ if (( $+commands[goenv] )); then
 	goenv global 1.20.1
 fi
 
-export PATH=${GOROOT}/bin:${PATH}
-export PATH=${GOPATH}/bin:${PATH}
+export GOBIN=${HOME}/go/bin
 export PATH=${GOBIN}:${PATH}
+export PATH=${GOROOT}/bin:${PATH}
+export PATH=${PATH}:${GOPATH}/bin
