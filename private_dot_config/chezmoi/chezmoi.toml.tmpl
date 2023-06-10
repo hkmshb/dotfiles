@@ -1,0 +1,13 @@
+{{/* boolean feature tags */}}
+{{- $docker := false -}}    {{/* true if this machine should have Docker installed */}}
+{{- $headless := false -}}  {{/* true if this machine does not have a screen and keyboard */}}
+{{- "" -}}
+
+
+{{- $email := "s.abdulhakeeem@gmail" -}}
+
+[data]
+    docker = {{ $docker }}
+    email = {{ $email | quote }}
+    headlless = {{ $headless }}
+    lastpassAccount = ""
