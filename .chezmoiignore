@@ -1,3 +1,5 @@
 [._]tmp/
 bin/
 zsh/
+
+com.googlecode.iterm2.plist
