@@ -1,0 +1,5 @@
+[user]
+    email = s.abdulhakeeem@gmail.com
+    name  = hkmshb
+[credential]
+    helper = osxkeychain

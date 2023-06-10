@@ -1,0 +1,49 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+{{- $brews := list
+    "caddy"
+    "direnv"
+    "docker-compose"
+    "goenv"
+    "jq"
+    "lastpass-cli"
+    "micro"
+    "n"
+    "pre-commit"
+    "pyenv"
+    "pyenv-virtualenv"
+    "sqlite"
+    "syncthing"
+    "umlet"
+    "yarn"
+    "youtubedr" }}
+
+{{- $casks := list
+    "android-studio"
+    "docker"
+    "flux"
+    "iterm2"
+    "libreoffice"
+    "megasync"
+    "microsoft-edge"
+    "slack"
+    "vagrant"
+    "visual-studio-code"
+    "vlc" -}}
+
+{{ if eq .chezmoi.arch "amd64" }}
+{{   $casks = concat $casks (list
+        "virtualbox") }}
+{{ end }}
+
+brew bundle -v --no-lock --file=/dev/stdin <<EOF
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end }}
+
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF

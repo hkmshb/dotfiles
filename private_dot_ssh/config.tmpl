@@ -1,0 +1,15 @@
+Host github.com
+	 HostName github.com
+	 User git
+	 IdentityFile ~/.ssh/id_ed25519
+
+Host kss-github.kaplan.com	 
+     HostName kss-github.kaplan.com
+     User git
+     IdentityFile ~/.ssh/id_ed25519_kpl
+	 
+{{ if eq .chezmoi.os "darwin" }}
+Host *
+     AddKeysToAgent yes
+     UseKeychain yes
+{{ end }}
