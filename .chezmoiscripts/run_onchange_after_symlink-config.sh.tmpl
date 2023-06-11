@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+{{- $src_dir := .chezmoi.sourceDir }}
+{{- $etc_dir := .homebrew_etc_dir }}
+
+{{- $files := list
+    "Caddyfile"
+    "cgitrc" }}
+
+{{ range $files -}}
+if [ ! -f {{ $etc_dir }}/{{ . }} ]; then
+  ln -s {{ $src_dir }}/config/etc/{{ . }} {{ $etc_dir }}/{{ . }}
+fi
+{{ end }}

@@ -1,0 +1,30 @@
+{
+	auto_https off
+	order cgi after respond
+}
+
+jo.lan:80 {
+	reverse_proxy localhost:8800
+}
+
+git.jo.lan:80 {
+	handle /cgit/* {
+		root * /opt/homebrew/var/www/htdocs/
+		file_server /cgit/*
+	}
+	handle {
+		cgi  * /opt/homebrew/share/cgit/cgit.cgi
+	}
+}
+
+pubreg.emid.lan:80 {
+	reverse_proxy localhost:3000
+}
+
+pubver.emid.lan:80 {
+	reverse_proxy localhost:3001
+}
+
+api.emid.lan:80 {
+	reverse_proxy localhost:5000
+}

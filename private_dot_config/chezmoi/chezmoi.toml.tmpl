@@ -3,7 +3,6 @@
 {{- $headless := false -}}  {{/* true if this machine does not have a screen and keyboard */}}
 {{- "" -}}
 
-
 {{- $email := "s.abdulhakeeem@gmail" -}}
 
 [data]
@@ -11,3 +10,5 @@
     email = {{ $email | quote }}
     headlless = {{ $headless }}
     lastpassAccount = ""
+    homebrew_etc_dir = "/opt/homebrew/etc"
+    homebrew_var_dir = "/opt/homebrew/var"
