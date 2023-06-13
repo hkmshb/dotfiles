@@ -33,13 +33,18 @@ set -eufo pipefail
     "slack"
     "vagrant"
     "visual-studio-code"
-    "vlc" -}}
+    "vlc"
+    "zulu11" -}}
 
 {{ if eq .chezmoi.arch "amd64" }}
 {{   $casks = concat $casks (list
         "virtualbox") }}
 {{ end }}
 
+# add taps
+brew tap homebrew/cask-versions # for zulu
+
+# install ...
 brew bundle -v --no-lock --file=/dev/stdin <<EOF
 {{ range ($brews | sortAlpha | uniq) -}}
 brew "{{ . }}"
