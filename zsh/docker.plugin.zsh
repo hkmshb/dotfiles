@@ -12,3 +12,10 @@ alias dv='docker volume'
 
 # remove dangling images
 alias di-drop-dangling='docker image rm $(docker images -f dangling=true)'
+
+
+## 
+#---------------------------------------
+if [[ `uname -m` == "arm64" ]]; then
+  export DOCKER_DEFAULT_PLATFORM=linux/amd64
+fi
