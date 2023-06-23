@@ -25,6 +25,10 @@ pubver.emid.lan:80 {
 	reverse_proxy localhost:3001
 }
 
+10.0.2.2:80 {
+	reverse_proxy localhost:5000
+}
+
 api.emid.lan:80 {
 	reverse_proxy localhost:5000
 }
