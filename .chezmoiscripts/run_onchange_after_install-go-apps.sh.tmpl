@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ if (eq .chezmoi.os "darwin" "linux") }}
+{{- $apps := list
+    "cespare/reflex@latest"
+    -}}
+
+{{ range $apps -}}
+go install "github.com/{{.}}"
+{{ end }}
+
+{{- end }}

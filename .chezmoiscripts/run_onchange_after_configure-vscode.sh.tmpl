@@ -2,11 +2,12 @@
 
 set -eufo pipefail
 
-{{- if (eq .chezmoi.os "darwin" "linux") }}
+{{ if (eq .chezmoi.os "darwin" "linux") }}
 {{- $extensions := list
     "christian-kohler.path-intellisense"
     "codezombiech.gitignore"
     "DavidAnson.vscode-markdownlint"
+    "dbaeumer.vscode-eslint"
     "dendron.dendron"
     "dendron.dendron-markdown-preview-enhanced"
     "dendron.dendron-markdown-shortcuts"
@@ -18,12 +19,14 @@ set -eufo pipefail
     "EditorConfig.EditorConfig"
     "formulahendry.auto-close-tag"
     "formulahendry.auto-rename-tag"
+    "github.github-vscode-theme"
     "golang.go"
     "hashicorp.terraform"
     "jinliming2.vscode-go-template"
     "johnpapa.vscode-peacock"
     "Lencerf.beancount"
     "mechatroner.rainbow-csv"
+    "ms-dotnettools.csdevkit"
     "ms-python.isort"
     "ms-python.python"
     "ms-vscode.live-server"
