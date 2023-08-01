@@ -3,20 +3,25 @@
 set -eufo pipefail
 
 {{- $brews := list
+    "bash"
     "caddy"
     "cgit"
     "croc"
     "direnv"
     "docker-compose"
+    "gitea"
     "goenv"
     "go-task"
+    "highlight"
     "jq"
     "lastpass-cli"
     "micro"
     "n"
+    "pnpm"
     "pre-commit"
     "pyenv"
     "pyenv-virtualenv"
+    "rbenv"
     "sqlite"
     "syncthing"
     "umlet"
@@ -27,15 +32,18 @@ set -eufo pipefail
     "android-studio"
     "docker"
     "flux"
+    "http-toolkit"
     "iterm2"
     "lapce"
     "libreoffice"
     "megasync"
     "microsoft-edge"
+    "postman"
     "slack"
     "vagrant"
     "visual-studio-code"
     "vlc"
+    "wireshark"
     "zoom"
     "zulu11" -}}
 
@@ -46,6 +54,7 @@ set -eufo pipefail
 
 # add taps
 brew tap homebrew/cask-versions # for zulu
+brew tap gitea/tap https://gitea.com/gitea/homebrew-gitea
 
 # install ...
 brew bundle -v --no-lock --file=/dev/stdin <<EOF

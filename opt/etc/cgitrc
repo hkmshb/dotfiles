@@ -22,18 +22,18 @@ enable-git-config=1
 enable-log-filecount=1
 enable-log-linecount=1
 
-remove-suffix=1
-repository-sort=age
-
-section-sort=0
-section-from-path=2
-project-list=/Users/abdulhakeem/.config/cgit/repo.list
-
 root-title=Local Repos
 root-readme=/opt/homebrew/var/www/htdocs/cgit/about.html
 
-scan-path=/Users/abdulhakeem/projects/
-source-filter=/opt/homebrew/lib/cgit/filters/syntax-highlighting.py
+section-sort=0
+section-from-path=2
+
+remove-suffix=1
+repository-sort=age
+
+#source-filter=/opt/homebrew/lib/cgit/filters/syntax-highlighting.sh
+project-list=/Users/abdulhakeem/.config/cgit/repo.list
+scan-path=/Users/abdulhakeem/projects
 
 ##
 ## Search for these files in the root of the default branch of repositories

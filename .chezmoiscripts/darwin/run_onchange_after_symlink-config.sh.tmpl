@@ -10,7 +10,7 @@ set -eufo pipefail
     "cgitrc" }}
 
 {{ range $files -}}
-if [ ! -f {{ $etc_dir }}/{{ . }} ]; then
-  ln -s {{ $src_dir }}/config/etc/{{ . }} {{ $etc_dir }}/{{ . }}
+if [[ ! -h {{ $etc_dir }}/{{ . }} ]]; then
+  ln -s {{ $src_dir }}/opt/etc/{{ . }} {{ $etc_dir }}/{{ . }}
 fi
 {{ end }}
