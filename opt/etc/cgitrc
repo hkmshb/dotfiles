@@ -25,8 +25,8 @@ enable-log-linecount=1
 root-title=Local Repos
 root-readme=/opt/homebrew/var/www/htdocs/cgit/about.html
 
-section-sort=0
-section-from-path=2
+section-sort=1
+section-from-path=1
 
 remove-suffix=1
 repository-sort=age
