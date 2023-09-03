@@ -17,6 +17,7 @@ set -eufo pipefail
     "lastpass-cli"
     "micro"
     "n"
+    "nvim"
     "pnpm"
     "pre-commit"
     "pyenv"
@@ -53,8 +54,9 @@ set -eufo pipefail
 {{ end }}
 
 # add taps
-brew tap homebrew/cask-versions # for zulu
-brew tap gitea/tap https://gitea.com/gitea/homebrew-gitea
+brew tap homebrew/cask-fonts                                # for nerd-fonts
+brew tap homebrew/cask-versions                             # for zulu
+brew tap gitea/tap https://gitea.com/gitea/homebrew-gitea   # for gitea
 
 # install ...
 brew bundle -v --no-lock --file=/dev/stdin <<EOF
