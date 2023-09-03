@@ -9,7 +9,6 @@ set -eufo pipefail
     "croc"
     "direnv"
     "docker-compose"
-    "gitea"
     "goenv"
     "go-task"
     "highlight"
@@ -56,7 +55,6 @@ set -eufo pipefail
 # add taps
 brew tap homebrew/cask-fonts                                # for nerd-fonts
 brew tap homebrew/cask-versions                             # for zulu
-brew tap gitea/tap https://gitea.com/gitea/homebrew-gitea   # for gitea
 
 # install ...
 brew bundle -v --no-lock --file=/dev/stdin <<EOF
