@@ -31,7 +31,10 @@ section-from-path=1
 remove-suffix=1
 repository-sort=age
 
-#source-filter=/opt/homebrew/lib/cgit/filters/syntax-highlighting.sh
+readme=:README.md
+
+about-filter=/opt/homebrew/lib/cgit/filters/about-formatting.sh
+source-filter=/opt/homebrew/lib/cgit/filters/syntax-highlighting.sh
 project-list=/Users/abdulhakeem/.config/cgit/repo.list
 scan-path=/Users/abdulhakeem/projects
 
@@ -39,4 +42,4 @@ scan-path=/Users/abdulhakeem/projects
 ## Search for these files in the root of the default branch of repositories
 ## for coming up with the about page:
 ##
-readme=README.md
+# readme=:README.md

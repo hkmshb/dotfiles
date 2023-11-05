@@ -3,7 +3,7 @@
 	order cgi after respond
 	log default {
 		output file /opt/homebrew/var/log/caddy.err.log
-		format json 
+		format json
 	}
 }
 
@@ -17,7 +17,7 @@ git.jo.lan:80 {
 		file_server /cgit/*
 	}
 	handle {
-		cgi  * /opt/homebrew/share/cgit/cgit.cgi
+		cgi * /opt/homebrew/share/cgit/cgit.cgi
 	}
 }
 
@@ -36,3 +36,4 @@ pubver.emid.lan:80 {
 api.emid.lan:80 {
 	reverse_proxy localhost:5600
 }
+
