@@ -1,0 +1,16 @@
+[editor]
+bufferline = "always"
+rulers = [80, 100]
+
+[editor.file-picker]
+git-ignore = false
+
+[editor.whitespace.render]
+space = "all"
+tab = "none"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+character = "|"
+skip-levels = 1

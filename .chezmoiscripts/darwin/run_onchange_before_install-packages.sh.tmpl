@@ -11,17 +11,21 @@ set -eufo pipefail
     "docker-compose"
     "goenv"
     "go-task"
+    "helix"
     "highlight"
     "jq"
+    "k3d"
     "lastpass-cli"
     "micro"
     "n"
     "nvim"
+    "pipx"
     "pnpm"
     "pre-commit"
     "pyenv"
     "pyenv-virtualenv"
     "rbenv"
+    "ripgrep"
     "sqlite"
     "syncthing"
     "umlet"
@@ -30,6 +34,7 @@ set -eufo pipefail
 
 {{- $casks := list
     "android-studio"
+    "dbeaver-community"
     "docker"
     "flux"
     "http-toolkit"
@@ -40,6 +45,7 @@ set -eufo pipefail
     "microsoft-edge"
     "postman"
     "slack"
+    "sqlitestudio"
     "vagrant"
     "visual-studio-code"
     "vlc"
@@ -53,8 +59,8 @@ set -eufo pipefail
 {{ end }}
 
 # add taps
-brew tap homebrew/cask-fonts                                # for nerd-fonts
-brew tap homebrew/cask-versions                             # for zulu
+brew tap homebrew/cask-fonts              # for nerd-fonts
+brew tap homebrew/cask-versions           # for zulu
 
 # install ...
 brew bundle -v --no-lock --file=/dev/stdin <<EOF
