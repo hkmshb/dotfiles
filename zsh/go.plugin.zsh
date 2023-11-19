@@ -1,6 +1,7 @@
 ## exports
 #---------------------------------------
 export GO111MODULE=on
+export CGO_ENABLED=1
 
 export GOENV_ROOT=${HOME}/.goenv
 export PATH=${GOENV_ROOT}/bin:${PATH}
