@@ -5,7 +5,6 @@ set -eufo pipefail
 {{- $brews := list
     "act"
     "bash"
-    "caddy"
     "cgit"
     "croc"
     "direnv"
@@ -14,12 +13,17 @@ set -eufo pipefail
     "go-task"
     "helix"
     "highlight"
+    "httpie"
     "jq"
+    "jenv"
     "k3d"
     "lastpass-cli"
+    "maven"
     "micro"
     "n"
     "nvim"
+    "ollama"
+    "openjdk"
     "pipx"
     "pnpm"
     "pre-commit"
@@ -29,6 +33,7 @@ set -eufo pipefail
     "ripgrep"
     "sqlite"
     "syncthing"
+    "terraform"
     "umlet"
     "yarn"
     "youtubedr" }}
@@ -47,6 +52,7 @@ set -eufo pipefail
     "postman"
     "slack"
     "sqlitestudio"
+    "udig"
     "vagrant"
     "visual-studio-code"
     "vlc"
@@ -73,3 +79,7 @@ brew "{{ . }}"
 cask "{{ . }}"
 {{ end -}}
 EOF
+
+# install nixos
+curl -L https://nixos.org/nix/install | sh
+

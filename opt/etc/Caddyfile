@@ -1,7 +1,7 @@
 {
 	auto_https off
-	order cgi after respond
-	log default {
+	order cgi before respond
+  log default {
 		output file /opt/homebrew/var/log/caddy.err.log
 		format json
 	}
@@ -36,4 +36,3 @@ pubver.emid.lan:80 {
 api.emid.lan:80 {
 	reverse_proxy localhost:5600
 }
-

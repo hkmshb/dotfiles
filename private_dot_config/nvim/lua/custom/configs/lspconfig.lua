@@ -22,19 +22,41 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
--- lspconfig.pyright.setup { blabla }
 
-lspconfig.htmx.setup{}
-lspconfig.golangci_lint_ls.setup{
-  filetypes = {"go", "gomod"}
-}
-lspconfig.templ.setup{
-  filetypes = {"templ"}
-}
 lspconfig.beancount.setup{
   init_options = {
     journal_file = "/Users/abdulhakeem/projects/vault/ledger/config.bean"
+  }
+}
+
+lspconfig.golangci_lint_ls.setup{
+  filetypes = {"go", "gomod"}
+}
+
+lspconfig.htmx.setup{}
+lspconfig.templ.setup{
+  filetypes = {"templ"}
+}
+
+lspconfig.pylsp.setup {
+  settings = {
+    pylsp = {
+      configurationSources = {'flake8'},
+      plugins = {
+        -- formatter options
+        black = {enabled=true},
+        autopep8 = {enabled=false},
+        yapf = {enabled=false},
+        -- linter options
+        flake8 = {enabled=true, indentSize=2, maxLineLength=100},
+        mccable= {enaled=false},
+        pycodestyle= {enabled=false},
+        pyflake = {enabled=false},
+        pylint = {enabled=false},
+        -- import sorting
+        pyls_isort = {enabled=true},
+      }
+    }
   }
 }
 
@@ -59,4 +81,3 @@ configs.golangcilsp = {
     }
   }
 }
-
