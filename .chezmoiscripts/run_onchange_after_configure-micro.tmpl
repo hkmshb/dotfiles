@@ -2,17 +2,13 @@
 
 set -eufo pipefail
 
-{{- if (eq .chezmoi.os "darwin" "linux") }}
 {{- $plugs := list
     "detectindent"
     "editorconfig"
     "filemanager"
-    "go"
     "misspell"
     "wc" -}}
 
 {{ range $plugs -}}
 micro -plugin install {{ . }}
 {{ end }}
-
-{{- end }}

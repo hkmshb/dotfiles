@@ -9,9 +9,9 @@ set -eufo pipefail
     "croc"
     "direnv"
     "docker-compose"
+    "git"
     "goenv"
     "go-task"
-    "helix"
     "highlight"
     "httpie"
     "jq"
@@ -40,25 +40,23 @@ set -eufo pipefail
 
 {{- $casks := list
     "android-studio"
-    "dbeaver-community"
     "docker"
     "flux"
     "http-toolkit"
     "iterm2"
-    "lapce"
-    "libreoffice"
+    "pgadmin4"
     "megasync"
     "microsoft-edge"
+    "ngrok"
     "postman"
+    "qgis"
     "slack"
     "sqlitestudio"
-    "udig"
     "vagrant"
     "visual-studio-code"
     "vlc"
-    "wireshark"
     "zoom"
-    "zulu11" -}}
+    "zulu@17" -}}
 
 {{ if eq .chezmoi.arch "amd64" }}
 {{   $casks = concat $casks (list
@@ -67,7 +65,6 @@ set -eufo pipefail
 
 # add taps
 brew tap homebrew/cask-fonts              # for nerd-fonts
-brew tap homebrew/cask-versions           # for zulu
 
 # install ...
 brew bundle -v --no-lock --file=/dev/stdin <<EOF
@@ -81,5 +78,5 @@ cask "{{ . }}"
 EOF
 
 # install nixos
-curl -L https://nixos.org/nix/install | sh
+## curl -L https://nixos.org/nix/install | sh
 

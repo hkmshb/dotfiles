@@ -2,7 +2,6 @@
 
 set -eufo pipefail
 
-{{ if (eq .chezmoi.os "darwin" "linux") }}
 {{- $apps := list
     "cespare/reflex@latest"
     "golangci/golangci-lint/cmd/golangci-lint@latest"
@@ -16,5 +15,3 @@ go install "github.com/{{.}}"
 go install "{{ trimPrefix "~" . }}"
   {{ end }}
 {{ end }}
-
-{{- end }}

@@ -2,7 +2,6 @@
 
 set -eufo pipefail
 
-{{ if (eq .chezmoi.os "darwin" "linux") }}
 {{- $extensions := list
     "christian-kohler.path-intellisense"
     "codezombiech.gitignore"
@@ -53,4 +52,3 @@ set -eufo pipefail
 code --force --install-extension {{ . }}
 {{ end }}
 
-{{- end }}
