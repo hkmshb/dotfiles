@@ -2,10 +2,6 @@
 [hub]
         protocol = https
 [alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
 [color]
         diff = auto
@@ -41,5 +37,6 @@
 	defaultBranch = main
 [include]
     path = ~/.gitconfig.local
-[includeIf "gitdir:~/projects/work/kaplan/"]
-    path = ~/.gitconfig.kaplan
+[includeIf "gitdir:~/projects/eha/"]
+    path = ~/.gitconfig.eha
+

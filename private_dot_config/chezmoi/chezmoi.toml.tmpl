@@ -1,14 +1,18 @@
 {{/* boolean feature tags */}}
-{{- $docker := false -}}    {{/* true if this machine should have Docker installed */}}
+{{- $ephemeral := false -}} {{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
 {{- $headless := false -}}  {{/* true if this machine does not have a screen and keyboard */}}
+{{- $personal := false -}}  {{/* true if this machine should have personal secrets */}}
 {{- "" -}}
 
-{{- $email := "s.abdulhakeeem@gmail" -}}
+{{- $email := "s.abdulhakeeem@gmail.com" -}}
+{{- if not $personal -}}
+{{-   $email = "abdulhakeem.shaibu@ehealthnigeria.org" -}}
+{{- end -}}
 
 [data]
-    docker = {{ $docker }}
+    ephemeral = {{ $ephemeral }}
     email = {{ $email | quote }}
     headlless = {{ $headless }}
-    lastpassAccount = ""
+    personal = {{ $personal }}
     homebrew_etc_dir = "/opt/homebrew/etc"
     homebrew_var_dir = "/opt/homebrew/var"

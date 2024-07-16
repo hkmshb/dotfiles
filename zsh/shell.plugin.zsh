@@ -15,7 +15,7 @@ alias vi='nvim'
 
 ## activations
 #---------------------------------------
-export EDITOR=micro
+export EDITOR=vi
 
 
 # direnv
