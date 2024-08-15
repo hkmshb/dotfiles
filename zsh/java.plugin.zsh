@@ -1,6 +1,6 @@
 ## exports
 #-----------------------------------------------
-export PATH="$HOME/.jenv/bin:$PATH"
+# export PATH="$HOME/.jenv/bin:$PATH"
 
 ## activations
 #-----------------------------------------------
@@ -8,8 +8,8 @@ export PATH="$HOME/.jenv/bin:$PATH"
 # have to use `brew install`. However, after installation, you need to do 
 # `jenv add <JAVA-HOME>` to add the jdk/jre to jenv for management.
 
-if (( $+commands[jenv] )); then
-    eval "$(jenv init -)"
-    jenv global zulu64-17.0.11
-fi
+# if (( $+commands[jenv] )); then
+#     eval "$(jenv init -)"
+#     jenv global zulu64-17.0.11
+# fi
 
