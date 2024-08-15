@@ -1,10 +1,17 @@
--- EXAMPLE 
+-- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local servers = { "cssls", "html", "gopls", "sqls", "tsserver" }
+
+lspconfig.jqls.setup {}
+lspconfig.stylelint_lsp.setup {}
+lspconfig.templ.setup {
+  filetypes = { "templ" },
+}
+lspconfig.htmx.setup {}
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -14,8 +21,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
-lspconfig.htmx.setup{}
-lspconfig.jqls.setup{}
-lspconfig.stylelint_lsp.setup{}
-

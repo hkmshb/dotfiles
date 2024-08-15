@@ -10,7 +10,7 @@ local options = {
     typescriptreact = { "prettierd" },
     go = { "goimports", "gofmt" },
     python = { "isort", "ruff_format" },
-    ["*"] = { "cspell" },
+    ["templ"] = { "templ" },
   },
 
   format_on_save = {
