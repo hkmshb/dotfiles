@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "cssls", "html", "gopls", "sqls", "tsserver" }
+local servers = { "cssls", "html", "gopls", "pyright", "sqls", "tsserver" }
 
 lspconfig.jqls.setup {}
 lspconfig.stylelint_lsp.setup {}

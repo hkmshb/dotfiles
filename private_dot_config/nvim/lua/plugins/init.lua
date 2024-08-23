@@ -45,6 +45,7 @@ return {
         "htmx-lsp",
         "jq-lsp",
         "lua-language-server",
+        "pyright",
         "sqls",
         "stylelint-lsp",
         "templ",
