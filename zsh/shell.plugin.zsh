@@ -22,6 +22,17 @@ export PATH="./bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$CZROOT/bin:$
 export PATH="/opt/protobuf/bin:/opt/bin:$PATH"
 
 
+## activations
+#---------------------------------------
+export EDITOR=vi
+
+# direnv
+eval "$(direnv hook $SHELL)"
+
+# mise
+eval "$(mise activate zsh)"
+
+
 # aliases
 #---------------------------------------
 alias cz='chezmoi'
@@ -30,26 +41,20 @@ alias reload!='source ~/.zshrc'
 alias vi='nvim'
 alias .pl='pipelight --config ./.pipelight.ts'
 
+# mise
 alias .m='mise'
 alias .mi='mise install'
 alias .mr='mise run'
 alias .mu='mise use'
 
+# k8s
 alias .kc='kubectl'
 alias .kc-info='kubectl cluster-info'
 alias .kc-gnod='kubectl get nodes'
 alias .kc-gpod='kubectl get pods'
 alias .kc-plog="kubectl-log pods $1"
 
-
-## activations
-#---------------------------------------
-export EDITOR=vi
-
-
-# direnv
-eval "$(direnv hook $SHELL)"
-
-# mise
-eval "$(mise activate zsh)"
+# hammerspoon
+alias .hs-alert='hs -A -c "notifyTaskCompleted()"'
+alias .hs-nag='hs -A -c "nagScreen()"'
 

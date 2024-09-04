@@ -1,0 +1,25 @@
+[settings]
+experimental = true
+python_compile = true
+go_set_gobin = false
+
+[tools]
+go = "1.22"
+ruby = "2.7"
+python = "3.12"
+node = "20.16"
+deno = "1.45"
+rust = "1.80"
+terraform = "1.9"
+helm = "3.15"
+yarn = "1.22"
+pnpm = "9.6"
+pipx = "1.6"
+task = "3.38"
+jq = "latest"
+sqlite = "latest"
+ripgrep = "latest"
+pre-commit = "latest"
+maven = "latest"
+git = "latest"
+golangci-lint = "1.59"
