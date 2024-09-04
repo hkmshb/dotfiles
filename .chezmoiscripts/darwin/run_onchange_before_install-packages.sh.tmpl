@@ -5,7 +5,6 @@ set -eufo pipefail
 {{- $brews := list
     "act"
     "bash"
-    "cgit"
     "croc"
     "docker-compose"
     "git"
@@ -14,35 +13,33 @@ set -eufo pipefail
     "k3d"
     "lastpass-cli"
     "maven"
-    "micro"
     "mise"
     "nvim"
     "openjdk"
-    "syncthing"
     "umlet"
     "youtubedr" }}
 
 {{- $casks := list
-    "android-studio"
     "bruno"
     "docker"
     "flux"
+    "hammerspoon"
     "http-toolkit"
     "iterm2"
     "megasync"
     "ngrok"
     "slack"
     "sqlitestudio"
-    "vagrant"
-    "vlc"
-    "zoom"
     "zulu@17" -}}
 
 {{- $large_casks := list
     "android-studio"
     "pgadmin4"
     "microsoft-edge"
-    "qgis" -}}
+    "qgis"
+    "vagrant"
+    "vlc"
+    "zoom" -}}
 
 {{ if eq .chezmoi.arch "amd64" }}
 {{   $casks = concat $casks (list

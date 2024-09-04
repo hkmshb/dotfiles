@@ -25,7 +25,7 @@ return {
         -- formatters
         "goimports",
         "isort",
-        "prettierd",
+        "prettier",
         "ruff",
         "sqlfmt",
         "stylua",
