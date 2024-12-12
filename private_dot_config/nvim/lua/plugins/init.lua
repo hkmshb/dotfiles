@@ -23,6 +23,7 @@ return {
         "delve",
 
         -- formatters
+        "biome",
         "goimports",
         "isort",
         "prettier",

@@ -55,6 +55,7 @@ alias .kc-gpod='kubectl get pods'
 alias .kc-plog="kubectl-log pods $1"
 
 # hammerspoon
+# usage: <bash-command>; (.hs-alert|.hs-nag)
 alias .hs-alert='hs -A -c "notifyTaskCompleted()"'
 alias .hs-nag='hs -A -c "nagScreen()"'
 

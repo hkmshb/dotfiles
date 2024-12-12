@@ -25,4 +25,6 @@ uv = "0.4"
 chezmoi = "2.52"
 poetry = "1.8"
 grpcurl = "1.9.1"
+zellij = "0.40"
+zig = "0.13"
 
