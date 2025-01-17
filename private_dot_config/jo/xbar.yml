@@ -1,0 +1,65 @@
+---
+flatten: true
+repos:
+  work:
+    image: dart
+    org: eHealthAfrica
+    showGroupLabel: false
+    showPRLink: true
+    items:
+      - label: PlanFeld
+        links:
+          - label: Board
+            url: https://app.asana.com/0/1206956384597823/1206956447806701
+          - label: Dev
+            group: Servers
+            url: https://alpha-dev.planfeld.org/pfdev/ui
+          - label: Staging
+            group: Servers
+            url: https://beta.eha.im/pfstage/ui
+          - label: Production
+            group: Servers
+            url: https://planfeld.org/demo/ui
+      - label: Map Composer
+        name: map-composer
+        links:
+          - label: Dev
+            url: https://mapping-dev.eha.im
+          - label: Dev (API)
+            url: https://map-composer-api-dev.eha.im
+          - label: Staging
+            url: https://mapping.eha.im
+          - label: Production
+            url: https://mapping.ehealthafrica.org
+      - label: ROS
+        name: route-optimization-service
+        links:
+          - label: Staging
+            url: https://ros-api-stage.ehealthafrica.org
+          - label: Production
+            url: https://ros-api.ehealthafrica.org
+      - label: Data Portal - EOC
+        name: eoc-docker-setup
+        links:
+          - label: ckanext-eoc
+            url: ${url:gh.org}/ckanext-eoc
+      - label: Data Portal - EHA
+        name: grid-docker-setup
+        links:
+          - label: ckanext-grid
+            url: ${url:gh.org}/ckanext-grid
+      - label: VaxTrac
+        name: vaxtrac-app
+        disabled: true
+        links:
+          - label: Board
+            url: https://app.asana.com/0/1206956384597823/1206956447806701
+      - label: EMID
+        name: emid-app
+        disabled: true
+  hazel:
+    org: hkmshb
+    image: art
+    items:
+      - label: Jo
+      - label: Baob
