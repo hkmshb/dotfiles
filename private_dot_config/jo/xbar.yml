@@ -50,13 +50,30 @@ repos:
             url: ${url:gh.org}/ckanext-grid
       - label: VaxTrac
         name: vaxtrac-app
-        disabled: true
         links:
           - label: Board
             url: https://app.asana.com/0/1206956384597823/1206956447806701
+      - label: Academy
+        name: eha-academy
+        links:
+          - label: Board
+            url: https://app.asana.com/0/1205884205748716/1205884200873915
+          - label: Dev
+            group: server
+            url: https://eha-academy-test-367e6.web.app/
+          - label: Prod
+            group: server
+            url: https://academy.ehealthafrica.org
+          - label: Firebase.Console (Dev)
+            url: https://console.firebase.google.com/project/eha-academy-test-367e6/overview
+            group: firebase
+          - label: Firebase.Console (Prod)
+            url: https://console.firebase.google.com/project/eha-academy/overview
+            group: firebase
       - label: EMID
         name: emid-app
         disabled: true
+
   hazel:
     org: hkmshb
     image: art
