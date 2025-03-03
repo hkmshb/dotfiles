@@ -4,14 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "cssls", "html", "gopls", "pyright", "sqls", "ts_ls" }
-
-lspconfig.jqls.setup {}
-lspconfig.stylelint_lsp.setup {}
-lspconfig.templ.setup {
-  filetypes = { "templ" },
-}
-lspconfig.htmx.setup {}
+local servers = { "biome", "cssls", "html", "gopls", "pyright", "sqls", "ts_ls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -21,3 +14,10 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.jqls.setup {}
+lspconfig.stylelint_lsp.setup {}
+lspconfig.templ.setup {
+  filetypes = { "templ" },
+}
+lspconfig.htmx.setup {}

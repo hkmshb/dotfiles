@@ -32,12 +32,12 @@ return {
         "stylua",
 
         -- linters
-        "cspell",
-        "djlint",
-        "golangci-lint",
-        "markdownlint",
-        "rstcheck",
-        "stylelint",
+        -- "cspell",
+        -- "djlint",
+        -- "golangci-lint",
+        -- "markdownlint",
+        -- "rstcheck",
+        -- "stylelint",
 
         -- lsp
         "css-lsp",
