@@ -38,6 +38,7 @@ eval "$(mise activate zsh)"
 alias cz='chezmoi'
 alias reload!='source ~/.zshrc'
 
+alias cat='bat'
 alias vi='nvim'
 alias .pl='pipelight --config ./.pipelight.ts'
 
