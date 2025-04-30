@@ -16,13 +16,13 @@ set -eufo pipefail
     "mise"
     "nvim"
     "openjdk"
+    "podman-compose"
     "tmux"
     "umlet"
     "yarn"
     "yt-dlp" }}
 
 {{- $casks := list
-    "alacritty"
     "bruno"
     "docker"
     "flux"
@@ -33,7 +33,6 @@ set -eufo pipefail
     "iterm2"
     "megasync"
     "ngrok"
-    "orion"
     "slack"
     "sqlitestudio"
     "tunnelbear"
@@ -44,7 +43,6 @@ set -eufo pipefail
     "pgadmin4"
     "microsoft-edge"
     "qgis"
-    "vagrant"
     "vlc"
     "zoom" -}}
 
@@ -55,7 +53,7 @@ set -eufo pipefail
 
 
 # install ...
-brew bundle -v --no-lock --file=/dev/stdin <<EOF
+brew bundle -v --no-upgrade --file=/dev/stdin <<EOF
 {{ range ($brews | sortAlpha | uniq) -}}
 brew "{{ . }}"
 {{ end }}
