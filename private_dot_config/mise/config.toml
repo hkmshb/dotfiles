@@ -2,24 +2,23 @@
 experimental = true
 python_compile = true
 go_set_gobin = false
+idiomatic_version_file_enable_tools = ["python"]
 
 [tools]
 ruby = "2.7"
 python = "3.12"
-node = "20.17"
+node = "20.19"
 deno = "1.45"
 rust = "1.80"
 terraform = "1.10"
 task = "3.41"
 jq = "latest"
-sqlite = "latest"
+sqlite = "3.49"
 maven = "latest"
-go = "1.23"
+go = "1.24"
 air = "1.61"
 uv = "0.5"
 chezmoi = "2.58"
-poetry = "1.8"
-zellij = "0.40"
 zig = "0.13"
 pipx = "latest"
 pnpm = "10.1"
@@ -32,6 +31,10 @@ ffmpeg = "7.1"
 gcloud = "513.0.0"
 stylua = "latest"
 firebase = "13.33"
+cookiecutter = "2.1"
+ruff = "0.9"
+hadolint = "2.12"
+bat = "0.25"
 
 [env]
 
