@@ -33,7 +33,6 @@ stylua = "latest"
 firebase = "13.33"
 cookiecutter = "2.1"
 ruff = "0.9"
-hadolint = "2.12"
 bat = "0.25"
 
 [env]
