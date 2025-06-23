@@ -37,3 +37,29 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- load custom snippets
+require("luasnip.loaders.from_lua").load { paths = { "./lua/snippets" } }
+
+local ls = require "luasnip"
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = ".editorconfig",
+  command = "set filetype=editorconfig",
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = ".golangci.yml",
+  command = "set filetype=yaml",
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = ".pre-commit-config.yaml",
+  command = "set filetype=yaml",
+})
+
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  end
+end, { silent = true })
