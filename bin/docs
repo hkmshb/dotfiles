@@ -1,0 +1,62 @@
+#!/usr/bin/env elvish
+
+use flag
+
+var cmd = ""
+var opts = []
+
+
+var cmd-get = [
+  &help="download all html pages from provided url"
+  &func={|url|
+    wget --mirror --convert-links --adjust-extension --page-requisites \
+         --no-parent --directory-prefix $E:PROJECTS/docs \
+         $url
+  }
+  &err={|_|
+    echo 'usage: docs get <url>'
+    exit 1
+  }
+]
+
+var cmd-run = [
+  &help="run http server to serve all html docs from a folder"
+  &func={|&port=(num 9090) &dir=$E:PROJECTS/docs|
+    python -m http.server -d $dir $port
+  }
+  &err={|_|
+    echo 'usage: docs run [--port=9090]'
+    exit 1
+  }
+]
+
+fn call {|dict opts|
+  flag:call $dict[func] $opts &on-parse-error=$dict[err]
+}
+
+fn print-help {
+  echo ''
+  echo 'usage: docs [commands] <options>'
+  echo 'commands:'
+  echo '  get   ' $cmd-get[help]
+  echo '  run   ' $cmd-run[help]
+  echo '  help   display this message'
+}
+
+
+if (== (count $args) 0) {
+  set cmd = "help"
+} else {
+  set cmd = $args[0]
+  set opts = $args[1..]
+}
+
+if (or (==s $cmd "--help") (==s $cmd "help")) {
+  print-help
+} elif (==s $cmd "get") {
+  call $cmd-get $opts
+} elif (==s $cmd "run") {
+  call $cmd-run $opts
+} else {
+  echo 'unknown command '$cmd
+}
