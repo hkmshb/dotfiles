@@ -1,7 +1,7 @@
 {{/* boolean feature tags */}}
 {{- $ephemeral := false -}} {{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
 {{- $headless := false -}}  {{/* true if this machine does not have a screen and keyboard */}}
-{{- $personal := false -}}  {{/* true if this machine should have personal secrets */}}
+{{- $personal := true -}}   {{/* true if this machine should have personal secrets */}}
 {{- "" -}}
 
 {{- $email := "s.abdulhakeeem@gmail.com" -}}
@@ -12,7 +12,7 @@
 [data]
     ephemeral = {{ $ephemeral }}
     email = {{ $email | quote }}
-    headlless = {{ $headless }}
+    headless = {{ $headless }}
     personal = {{ $personal }}
     homebrew_etc_dir = "/opt/homebrew/etc"
     homebrew_var_dir = "/opt/homebrew/var"
