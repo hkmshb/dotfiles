@@ -1,42 +1,44 @@
 # Local/private config goes in the include
 [hub]
-        protocol = https
+    protocol = https
 [alias]
-        count   = !git shortlog -sn
+    count   = !git shortlog -sn
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[user]
+    email = s.abdulhakeeem@gmail.com
+    name = Abdulhakeem Shaibu
 [core]
-        excludesfile = ~/.gitignore
-        editor = micro
-        whitespace = cr-at-eol
-        quotepath = false
-        autocrlf = input
-        pager = tr -d '\\r' | less -REX
+    excludesfile = ~/.gitignore
+    editor = micro
+    whitespace = cr-at-eol
+    quotepath = false
+    autocrlf = input
+    pager = tr -d '\\r' | less -REX
 [apply]
-        whitespace = nowarn
+    whitespace = nowarn
 [mergetool]
-        keepBackup = false
+    keepBackup = false
 [difftool]
-        prompt = false
+    prompt = false
 [help]
-        autocorrect = 1
+    autocorrect = 1
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = simple
+    # See `git help config` (search for push.default)
+    # for more information on different options of the below setting.
+    #
+    # Setting to git 2.0 default to suppress warning message
+    default = simple
 [credential]
-        helper = osxkeychain
+    helper = osxkeychain
 [pull]
-	rebase = false
+    rebase = false
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [includeIf "gitdir:~/projects/"]
     path = ~/.gitconfig.hazel
 [includeIf "gitdir:~/projects/eha/"]
     path = ~/.gitconfig.eha
-
