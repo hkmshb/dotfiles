@@ -35,8 +35,8 @@
 	rebase = false
 [init]
 	defaultBranch = main
-[include]
-    path = ~/.gitconfig.local
+[includeIf "gitdir:~/projects/"]
+    path = ~/.gitconfig.hazel
 [includeIf "gitdir:~/projects/eha/"]
     path = ~/.gitconfig.eha
 

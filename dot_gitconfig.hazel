@@ -1,5 +1,6 @@
 [user]
     email = s.abdulhakeeem@gmail.com
     name  = hkmshb
-[credential]
-    helper = osxkeychain
+[core]
+    sshCommand = ssh -i ~/.ssh/id_ed25519
+
