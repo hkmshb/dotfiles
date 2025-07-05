@@ -1,25 +1,30 @@
 use path
-use re
 use str
 
 ## c completions
 
-fn all-projects-dir {|@dir|
-  var base-dir = $E:PROJECTS
-  if (> (count $@dir) 0) {
-    set base-dir = $base-dir/$@dir
+fn list-projects-dir {|@dir|
+  var proj-dir = $E:PROJECTS
+  var base-dir = $proj-dir
+
+  var n = (count $dir)
+  if (> $n 0) {
+    set proj-dir = $base-dir/$dir[-1]
   }
-  put (ls $base-dir) | keep-if {|d| and (path:is-dir $base-dir/$d) (not (str:has-prefix $d _))} 
+
+  put (ls $proj-dir) ^
+    | each {|d| if (== $n 0) { put $d'/' } else { put $dir[-1]$d'/' }} ^
+    | keep-if {|d| and (path:is-dir $base-dir/$d) (not (str:has-prefix $d _))} 
 }
 
-set edit:completion:arg-completer[c] = {|@args|
-  var n = (count $args)
+set edit:completion:arg-completer[c] = {|@argv|
+  var n = (count $argv)
   if (== $n 2) {
-      all-projects-dir
-  } elif (>= $n 3) {
-    cd $E:PROJECTS/$args[1]
-    edit:return-line
-    edit:clear
+    if (str:has-suffix $argv[-1] /) {
+      list-projects-dir $argv[-1]
+    } else {
+      list-projects-dir
+    }
   }
 }
 

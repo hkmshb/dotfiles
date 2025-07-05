@@ -50,3 +50,20 @@ fn gcm      { git checkout main }
 fn gcm!     { git checkout main; git pull }
 fn gb-prune { git remote prune origin }
 
+
+## custom commands
+## ---------------
+
+# c command with completion to change into sub-directories in the
+# projects directory
+fn c {|@dir|
+  var proj-dir = $E:PROJECTS
+  var n = (count $dir)
+
+  if (== $n 0) {
+    cd $proj-dir
+  } else {
+    cd $proj-dir/$dir[-1]
+  }
+}
+
