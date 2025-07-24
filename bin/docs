@@ -9,8 +9,9 @@ var opts = []
 var cmd-get = [
   &help="download all html pages from provided url"
   &func={|url|
-    wget --mirror --convert-links --adjust-extension --page-requisites \
-         --no-parent --directory-prefix $E:PROJECTS/docs \
+    echo (styled 'fetching pages from:' green)' '$url
+    wget --mirror --convert-links --adjust-extension --page-requisites ^
+         --no-parent --directory-prefix $E:PROJECTS/docs ^
          $url
   }
   &err={|_|
