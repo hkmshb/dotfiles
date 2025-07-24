@@ -36,6 +36,10 @@ ruff = "0.9"
 bat = "0.25"
 colima = "0.8"
 lima = "1.1"
+zoxide = "0.9"
+fzf = "0.63"
+starship = "1.23"
+helm = "3.18"
 
 [env]
 

@@ -13,13 +13,16 @@ set edit:prompt = $git:prompt~
 ## activate tools
 ## ---------------
 
-# direnv
-eval (direnv hook $E:SHELL | slurp)
-
 # active mise-en-place
 var -m: = (ns [&])
 eval (mise activate elvish | slurp) &ns=$-m: &on-end={|ns| set -m: = $ns }
 -m:activate
+
+# tool initializations
+eval (direnv hook $E:SHELL | slurp)
+eval (zoxide init elvish | slurp)
+eval (starship init elvish)
+
 
 # aliases
 fn cz   {|@a| chezmoi $@a}
