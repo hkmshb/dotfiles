@@ -40,6 +40,7 @@ zoxide = "0.9"
 fzf = "0.63"
 starship = "1.23"
 helm = "3.18"
+lsd = "1.1"
 
 [env]
 

@@ -1,14 +1,13 @@
-use git
-
 # source local '-' prefixed scripts for side effect
 var conf-dir = ~/.config/elvish
 for dir [-paths.elv -comps.elv] {
   eval (slurp < $conf-dir/$dir)
 }
 
-# set prompt
-set edit:prompt = $git:prompt~
+use git
 
+# set prompt
+# set edit:prompt = $git:prompt~
 
 ## activate tools
 ## ---------------
@@ -28,6 +27,7 @@ eval (starship init elvish)
 fn cz   {|@a| chezmoi $@a}
 fn cat  {|@a| bat $@a}
 fn vi   {|@a| nvim $@a}
+fn ls   {|@a| lsd --icon=never --group-directories-first $@a}
 
 # docker aliases
 fn d    {|@a| docker $@a}
