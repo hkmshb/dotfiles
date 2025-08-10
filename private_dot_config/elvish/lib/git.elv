@@ -5,9 +5,12 @@ use str
 
 
 var token = ""
-try {
- set token = (rbw get github-token | sed -n 's/^classic=//p')
-} catch {|| }
+
+fn set-gh-token {
+  try {
+    set token = (rbw get github-token | sed -n 's/^classic=//p')
+  } catch {|| }
+}
 
 # Retrieves repo description from remote repository on GitHub
 fn fetch-desc {|&owner='' &name=''|
