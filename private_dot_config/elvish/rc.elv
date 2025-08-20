@@ -4,7 +4,11 @@ for dir [-paths.elv -comps.elv] {
   eval (slurp < $conf-dir/$dir)
 }
 
+# NOTE: the following use directives are required to have modules available 
+# within interactive terminals even if not used directly within this script
+use gcp
 use git
+use net
 
 # set prompt
 # set edit:prompt = $git:prompt~
@@ -37,6 +41,7 @@ fn dc   {|@a| docker compose $@a}
 fn dcb  {|@a| docker compose build $@a}
 
 # git aliases
+fn ga       {|@a| git add $@a}
 fn gb       {|@a| git branch $@a}
 fn gs       {|@a| git status -sb $@a}
 fn gc       {|@a| git commit $@a}
@@ -51,6 +56,8 @@ fn gcd      { git checkout develop }
 fn gcd!     { git checkout develop; git pull }
 fn gcm      { git checkout main }
 fn gcm!     { git checkout main; git pull }
+fn gcs      { git checkout staging }
+fn gcs!     { git checkout staging; git pull }
 fn gb-prune { git remote prune origin }
 
 
