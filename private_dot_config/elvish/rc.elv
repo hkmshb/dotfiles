@@ -60,6 +60,8 @@ fn gcs      { git checkout staging }
 fn gcs!     { git checkout staging; git pull }
 fn gb-prune { git remote prune origin }
 
+# hammerspoon
+fn hs-alert { hs -A -c "notifyTaskCompleted()" }
 
 ## custom commands
 ## ---------------

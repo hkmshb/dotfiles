@@ -3,7 +3,8 @@
 ## misc
 set E:CZROOT    = $E:HOME/.local/share/chezmoi
 set E:PROJECTS  = $E:HOME/projects
-set E:PATH      = /usr/local/bin':'/usr/local/sbin':'/opt/homebrew/bin':'$E:HOME/.local/bin':'$E:CZROOT/bin':'$E:PATH
+set E:PATH      = /usr/local/bin':'/usr/local/sbin':'/opt/homebrew/bin':'$E:PATH
+set E:PATH      = $E:HOME/.local/bin':'$E:CZROOT/bin':'$E:PROJECTS/bin':'$E:PATH
 
 ## android
 set E:ANDROID_HOME     = $E:HOME/Library/Android/sdk

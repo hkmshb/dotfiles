@@ -1,0 +1,61 @@
+packages:
+  brews:
+    - act
+    - bash
+    - croc
+    - curlie
+    - colima
+    - direnv
+    - docker-compose
+    - elvish
+    - exiftool
+    - git
+    - graphicsmagick
+    - highlight
+    - hunspell
+    - k3d
+    - lima
+    - lima-additional-guestagents
+    - mise
+    - nvim
+    - opencv
+    - openjdk
+    - rbw
+    - sdcv
+    - umlet
+    - wget
+    - yarn
+    - yt-dlp
+  casks:
+    - bruno
+    - bitwarden
+    - darktable
+    - docker
+    - flux
+    - font-ubuntu-mono-nerd-font
+    - ghostty
+    - hammerspoon
+    - http-toolkit
+    - iterm2
+    - lastpass
+    - megasync
+    - ngrok
+    - orion
+    - slack
+    - sqlitestudio
+    - ticktick
+    - tunnelbear
+    - zed
+    - 'zulu@17'
+  casks-lg:
+    - android-studio
+    - pgadmin4
+    - microsoft-edge
+    - qgis
+    - vlc
+    - zoom
+
+  darwin:
+    brews:
+    casks:
+

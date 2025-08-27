@@ -2,6 +2,8 @@
 
 set -eufo pipefail
 
+if command -v go >/dev/null 2>&1; then
+  
 {{- $apps := list
     "a-h/templ/cmd/templ@latest"
     "go-delve/delve/cmd/dlv@latest"
@@ -21,3 +23,5 @@ go install "github.com/{{.}}"
 go install "{{ trimPrefix "~" . }}"
   {{- end -}}
 {{ end }}
+
+fi
