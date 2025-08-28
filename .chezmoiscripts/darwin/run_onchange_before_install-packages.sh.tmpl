@@ -10,7 +10,5 @@ cask {{. | quote}}
 {{ end -}}
 EOF
 
-# define an env var to indicate when to install large casks
-
-# install mise packages
-mise install
+# install/update mise packages
+mise install && mise outdated -l

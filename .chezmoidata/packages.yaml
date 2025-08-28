@@ -6,27 +6,24 @@ packages:
     - curlie
     - colima
     - direnv
-    - docker-compose
+    - dockutil
     - elvish
-    - exiftool
     - git
-    - graphicsmagick
-    - highlight
     - hunspell
+    - jless
     - k3d
     - lima
     - lima-additional-guestagents
     - mise
     - nvim
-    - opencv
     - openjdk
     - rbw
-    - sdcv
     - umlet
     - wget
     - yarn
     - yt-dlp
   casks:
+    - battery
     - bruno
     - bitwarden
     - darktable
@@ -50,7 +47,6 @@ packages:
   casks-lg:
     - android-studio
     - pgadmin4
-    - microsoft-edge
     - qgis
     - vlc
     - zoom
