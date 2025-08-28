@@ -1,6 +1,4 @@
 [._]tmp/
-bin/
 config/
-zsh/
+r/
 
-com.googlecode.iterm2.plist
