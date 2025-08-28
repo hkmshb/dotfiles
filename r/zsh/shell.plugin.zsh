@@ -18,8 +18,8 @@ function kubectl-log() {
 
 ## exports
 #---------------------------------------
-export PATH="./bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$CZROOT/bin:$PATH"
-export PATH="/opt/protobuf/bin:/opt/bin:$PATH"
+export PATH="./bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
+export PATH="/opt/protobuf/bin:/opt/bin:$CZROOT/r/bin:$PATH"
 
 
 ## activations
