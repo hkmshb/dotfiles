@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 export CZROOT=$HOME/.local/share/chezmoi
-export ZSH=$CZROOT/zsh
+export ZSH=$CZROOT/r/zsh
 
 # project folder that we can `c [tab]` to
 export PROJECTS=$HOME/projects

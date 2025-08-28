@@ -39,7 +39,7 @@ fzf = "0.63"
 starship = "1.23"
 helm = "3.18"
 lsd = "1.1"
-k6 = "1.2"
+cloud-sql-proxy = "1.37"
 
 [env]
 
