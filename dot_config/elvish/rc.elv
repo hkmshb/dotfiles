@@ -6,12 +6,12 @@ for dir [paths.elv completions.elv] {
 
 # NOTE: the following use directives are required to have modules available 
 # within interactive terminals even if not used directly within this script
-use gcp
 use git
 use net
+use rbw
 
-# set prompt
-# set edit:prompt = $git:prompt~
+use eha
+use t
 
 ## activate tools
 ## ---------------
@@ -29,8 +29,6 @@ eval (starship init elvish)
 ## expose aliases
 ## --------------
 use ./pkg/aliases
-
-
 
 # c command with completion to change into sub-directories in the
 # projects directory
