@@ -35,9 +35,11 @@ packages:
     - http-toolkit
     - iterm2
     - lastpass
+    - logseq
     - megasync
     - ngrok
     - orion
+    - pomatez
     - slack
     - sqlitestudio
     - ticktick
