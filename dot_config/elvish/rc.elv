@@ -7,11 +7,10 @@ for dir [paths.elv completions.elv] {
 # NOTE: the following use directives are required to have modules available 
 # within interactive terminals even if not used directly within this script
 use git
-use net
-use rbw
+use it
+use re
 
 use eha
-use t
 
 ## activate tools
 ## ---------------
@@ -40,6 +39,43 @@ fn c {|@dir|
     cd $proj-dir
   } else {
     cd $proj-dir/$dir[-1]
+  }
+}
+
+# mv-each $item - performs rename action with details in $item when
+# a list `mv $item[0] $item[1]`; map `mv $item[src] $item[dst]`
+fn mv-each {
+  each {|item|
+    if (==s (kind-of $item) 'list') {
+      mv $item[0] $item[1]
+    } elif (==s (kind-of $item) 'map') {
+      mv $item[src] $item[dst]
+    }
+  }
+}
+
+# for-each $cb - calls $cb on each value input and returns list with
+# original text and resulting text
+fn for-each {|cb|
+  each {|item|
+    if (==s (kind-of $item) 'string') {
+      var result = ($cb $item)
+      put [$item $result]
+    } else {
+      var result = ($cb $item[1])
+      put [$item[0] $result]
+    }
+  }
+}
+
+fn replace-each {|@patterns|
+  for-each {|item|
+    var src = $item
+    for p $@patterns {
+      set src = (put (re:replace $p[0] $p[1] $src))
+    }
+
+    put $src
   }
 }
 

@@ -3,10 +3,9 @@
 # dependencies: rbw
 # -----------------------------------------------------------------------------
 
-use net
+use it
 use os
 use path
-use rbw
 
 var proj-dir = $E:PROJECTS/eha
 var conf-dir  = $proj-dir/:cfg
@@ -43,7 +42,7 @@ fn gcp-db-proxy {|&server='gdb' &port=54320|
   }
 
   var v-key = 'gcp-db_'$server
-  var v-val = (rbw:get $v-key)
+  var v-val = (it:rbw-get $v-key)
 
   var gcs = $v-val[host]
   var cred-name = 'gcp-db-cred_'$server'.json'
@@ -51,7 +50,10 @@ fn gcp-db-proxy {|&server='gdb' &port=54320|
 
   cloud-sql-proxy $gcs ^
                -c $cred-path ^
-               -a (net:host-ip) ^
+               -a (it:host-ip) ^
                -p $port
 }
+
+
+use ../pkg/eha/cmd
 

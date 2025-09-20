@@ -1,3 +1,7 @@
+# podman
+edit:add-var docker~ {|@a| podman $@a}
+
+
 # aliases
 edit:add-var cat~  {|@a| bat $@a}
 edit:add-var cz~   {|@a| chezmoi $@a}
