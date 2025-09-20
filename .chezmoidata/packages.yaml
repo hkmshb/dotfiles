@@ -17,6 +17,7 @@ packages:
     - mise
     - nvim
     - openjdk
+    - podman
     - rbw
     - umlet
     - wget
@@ -40,6 +41,7 @@ packages:
     - ngrok
     - orion
     - pomatez
+    - podman-desktop
     - slack
     - sqlitestudio
     - ticktick

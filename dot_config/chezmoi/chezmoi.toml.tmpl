@@ -1,8 +1,7 @@
 {{/* boolean feature tags */}}
 {{- $ephemeral := false -}} {{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
-{{- $headless := false -}}  {{/* true if this machine does not have a screen and keyboard */}}
-{{- $personal := true -}}   {{/* true if this machine should have personal secrets */}}
-{{- "" -}}
+{{- $headless := false  -}} {{/* true if this machine does not have a screen and keyboard */}}
+{{- $personal := false  -}} {{/* true if this machine should have personal secrets */}}
 
 {{- $email := "s.abdulhakeeem@gmail.com" -}}
 {{- if not $personal -}}
