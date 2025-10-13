@@ -19,6 +19,7 @@ packages:
     - openjdk
     - podman
     - rbw
+    - typst
     - umlet
     - wget
     - yarn
@@ -32,28 +33,31 @@ packages:
     - flux
     - font-ubuntu-mono-nerd-font
     - ghostty
+    - google-drive
     - hammerspoon
     - http-toolkit
     - iterm2
     - lastpass
+    - libreoffice
     - logseq
     - megasync
     - ngrok
+    - ollamac
     - orion
+    - pgadmin4
     - pomatez
     - podman-desktop
     - slack
     - sqlitestudio
     - ticktick
     - tunnelbear
+    - vlc
     - zed
+    - zoom
     - 'zulu@17'
   casks-lg:
     - android-studio
-    - pgadmin4
     - qgis
-    - vlc
-    - zoom
 
   darwin:
     brews:
