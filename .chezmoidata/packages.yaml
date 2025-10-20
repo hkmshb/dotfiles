@@ -3,23 +3,20 @@ packages:
     - act
     - bash
     - croc
-    - curlie
     - colima
     - direnv
     - dockutil
     - elvish
+    - gibo
     - git
     - hunspell
-    - jless
     - k3d
     - lima
     - lima-additional-guestagents
     - mise
     - nvim
     - openjdk
-    - podman
     - rbw
-    - typst
     - umlet
     - wget
     - yarn
@@ -29,6 +26,8 @@ packages:
     - bruno
     - bitwarden
     - darktable
+    - dbeaver-community
+    - discord
     - docker
     - flux
     - font-ubuntu-mono-nerd-font
@@ -41,14 +40,17 @@ packages:
     - libreoffice
     - logseq
     - megasync
+    - neardrop
     - ngrok
     - ollamac
     - orion
     - pgadmin4
     - pomatez
     - podman-desktop
+    - qgis
     - slack
     - sqlitestudio
+    - telegram
     - ticktick
     - tunnelbear
     - vlc
