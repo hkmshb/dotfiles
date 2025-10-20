@@ -17,7 +17,7 @@ set E:GOBIN        = $E:HOME/go/bin
 set E:PNPM_HOME    = $E:HOME/Library/pnpm
 
 ## podman
-#set E:DOCKER_HOST = ssh://core@localhost:63336
+# set E:DOCKER_HOST = ssh://core@localhost:63336
 set E:DOCKER_SOCK = /run/user/503/podman/podman.sock
 
 

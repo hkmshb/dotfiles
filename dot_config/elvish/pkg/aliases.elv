@@ -1,5 +1,5 @@
 # podman
-edit:add-var docker~ {|@a| podman $@a}
+# edit:add-var docker~ {|@a| podman $@a}
 
 
 # aliases
