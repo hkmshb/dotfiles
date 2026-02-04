@@ -57,6 +57,9 @@ packages:
     - zed
     - zoom
     - 'zulu@17'
+    # ai tools
+    - claude-code
+    - windsurf
   casks-lg:
     - android-studio
     - qgis
