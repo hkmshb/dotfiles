@@ -14,6 +14,10 @@ fn set-gh-token {
 
 # Retrieves repo description from remote repository on GitHub
 fn fetch-desc {|&owner='' &name=''|
+  if (==s $token "") {
+    set-gh-token
+  }
+
   var variables = [&owner=$owner &name=$name]
   var query = (str:join ' ' [
     'query($owner: String!, $name: String!){'
@@ -23,13 +27,17 @@ fn fetch-desc {|&owner='' &name=''|
   ])
 
   var data = (put [&query=$query &variables=$variables] | to-json)
-  var resp = (curl -sH "Authorization: bearer "$token ^
+  var t = (echo (curl -sH "Authorization: bearer "$token ^
       -H "Content-Type: application/json" ^
       -X POST "https://api.github.com/graphql" ^
       -d $data
-  )
+  ) | from-json)
 
-  var t = (echo $resp | from-json)
+  if (not (has-key $t data)) {
+    echo (styled "error: request failed!" red)
+    return
+  }
+
   put $t[data][repository][description]
 }
 
