@@ -7,8 +7,8 @@ for dir [paths.elv completions.elv] {
 # NOTE: the following use directives are required to have modules available 
 # within interactive terminals even if not used directly within this script
 use git
-use it
 use re
+use sys
 
 use eha
 

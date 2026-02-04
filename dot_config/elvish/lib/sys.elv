@@ -17,19 +17,22 @@ fn rbw-get {|key|
   ]
 }
 
-fn exc-psql {|db user @sql|
+fn docker-psql {|db user @sql|
+  var data-dir = $E:PROJECTS/data/dump/
+  mkdir -p $data-dir
+
   docker run --rm --name psql ^
-      -v $E:PROJECTS/eha/_tmp:/mnt ^
+      -v $E:PROJECTS/data/dump:/mnt ^
       -i alpine/psql ^
       -h (host-ip) ^
       -p 54320 ^
-      -U $user -W ^
-      -d $db ^
+      -U $user ^
+      -d $db -W ^
       -c $@sql
 }
 
-# read secrets file
-fn load-dict {|@path|
+# load-ini read ini formatted config data from a file
+fn load-ini {|@path|
   if (not (os:exists $@path)) {
     echo (styled 'error: file not found "'$@path'"' red)
     exit 1

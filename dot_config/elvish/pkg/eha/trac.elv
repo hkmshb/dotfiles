@@ -1,10 +1,10 @@
 #!/usr/bin/env elvish
 
-use net
+use sys
 
 fn exc {|@sql|
   docker run --rm --name psql ^
-      -v /Users/abdulhakeem/projects/eha/_tmp:/mnt ^
+      -v /Users/abdulhakeem/projects/data/dump:/mnt ^
       -i alpine/psql ^
       -h (net:host-ip) -p 54320 ^
       -U postgres -d planfeld_staging -W ^
