@@ -11,7 +11,8 @@ set E:ANDROID_SDK_ROOT = $E:HOME/Library/Android/sdk
 ## golang
 set E:GO111MODULE  = on
 set E:CGO_ENABLED  = 1
-set E:GOBIN        = $E:HOME/go/bin
+set E:GOPATH       = $E:HOME/go
+set E:GOBIN        = $E:GOPATH/bin
 
 ## pnpm
 set E:PNPM_HOME    = $E:HOME/Library/pnpm

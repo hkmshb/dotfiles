@@ -35,6 +35,10 @@ edit:add-var gcs~      { git checkout staging }
 edit:add-var gcs!~     { git checkout staging; git pull }
 edit:add-var gb-prune~ { git remote prune origin }
 
+# git-bug
+edit:add-var .gb~      {|@a| git-bug $@a}
+edit:add-var .gbb~     {|@a| git-bug bridge $@a}
+
 # hammerspoon
 edit:add-var hs-alert~ { hs -A -c "notifyTaskCompleted()" }
 
