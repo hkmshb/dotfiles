@@ -17,6 +17,9 @@ set E:GOBIN        = $E:GOPATH/bin
 ## pnpm
 set E:PNPM_HOME    = $E:HOME/Library/pnpm
 
+## bun
+set E:BUN_BIN      = $E:HOME/.bun/bin
+
 ## podman
 # set E:DOCKER_HOST = ssh://core@localhost:63336
 set E:DOCKER_SOCK = /run/user/503/podman/podman.sock
@@ -33,6 +36,8 @@ set paths = [
   $E:ANDROID_SDK_ROOT/emulator
   $E:ANDROID_SDK_ROOT/platform-tools
   $E:CZROOT/r/bin
-  $E:GOBIN
   $E:PNPM_HOME
+  $E:BUN_BIN
+  $E:GOBIN
 ]
+
