@@ -13,6 +13,8 @@ fn set-gh-token {
 }
 
 # Retrieves repo description from remote repository on GitHub
+#
+# cli usage: git:fetch-desc &owner=hkmshb &name=jo
 fn fetch-desc {|&owner='' &name=''|
   if (==s $token "") {
     set-gh-token
@@ -43,6 +45,8 @@ fn fetch-desc {|&owner='' &name=''|
 
 # Determines whether a directory is a git repository and returns map
 # with metadata meta like repo name and owner
+#
+# cli usage: git:meta .
 fn meta {|dir|
   var repo = (and (os:is-dir $dir) (os:is-dir $dir/.git))
   if (not $repo) {
@@ -66,6 +70,8 @@ fn branch {
 }
 
 # Reads a repo description from the .git/description file
+#
+# cli usage: git:desc .
 fn desc {|dir &silent=$false|
   var repo = (meta $dir)
   if (not $repo[ok]) {
@@ -77,6 +83,8 @@ fn desc {|dir &silent=$false|
 }
 
 # Sets a description for a repo in the .git/description file
+#
+# cli usage: git:set-desc . 'message'
 fn set-desc {|dir msg &silent=$false|
   var repo = (meta $dir)
   if (not $repo[ok]) {
@@ -88,6 +96,8 @@ fn set-desc {|dir msg &silent=$false|
 }
 
 # Sets a description for a repo from the remote origin repo
+#
+# cli usage: git:sync-desc .
 fn sync-desc {|dir &silent=$false|
   var repo = (meta $dir)
   if (not $repo[ok]) {
