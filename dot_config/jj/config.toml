@@ -1,0 +1,10 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "hkmshb"
+email = "s.abdulhakeeem@gmail.com"
+
+[ui]
+default-command = "log"
+diff-editor = ":builtin"
+editor = "vim"
