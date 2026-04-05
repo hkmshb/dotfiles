@@ -97,6 +97,7 @@ return {
         "rust",
         "sql",
         "styled",
+        "svelte",
         "templ",
         "terraform",
         "todotxt",
@@ -201,6 +202,40 @@ return {
         provider_selector = function(bufnr, filetype, buftype)
           return { "treesitter", "indent" }
         end,
+      }
+    end,
+  },
+  {
+    "olimorris/codecompanion.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      opts = {
+        log_level = "DEBUG", -- or "TRACE"
+      },
+    },
+    config = function()
+      require("codecompanion").setup {
+        adapters = {
+          acp = {
+            opencode = function()
+              return require("codecompanion.adapters").extend("opencode", {
+                defaults = {
+                  mode = "plan",
+                  mcpServers = "inherit_from_config",
+                },
+              })
+            end,
+          },
+        },
+        interactions = {
+          chat = {
+            adapter = "opencode",
+          },
+        },
       }
     end,
   },
