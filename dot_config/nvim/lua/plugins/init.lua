@@ -26,12 +26,13 @@ return {
         "biome",
         "goimports",
         "isort",
-        "prettier",
+        "oxfmt",
         "ruff",
         "sqlfmt",
         "stylua",
 
         -- linters
+        "oxlint",
         -- "cspell",
         -- "djlint",
         -- "golangci-lint",
@@ -41,6 +42,8 @@ return {
 
         -- lsp
         "css-lsp",
+        "css-variables-language-server",
+        "cssmodules-language-server",
         "gopls",
         "html-lsp",
         "htmx-lsp",
@@ -48,7 +51,7 @@ return {
         "lua-language-server",
         "pyright",
         "sqls",
-        "stylelint-lsp",
+        "stylelint-language-server",
         "templ",
         "typescript-language-server",
       },
