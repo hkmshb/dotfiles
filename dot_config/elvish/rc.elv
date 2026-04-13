@@ -79,3 +79,10 @@ fn replace-each {|@patterns|
   }
 }
 
+
+# load completion modules from zzamboni/elvish-completions
+use github.com/zzamboni/elvish-completions/builtins
+use github.com/zzamboni/elvish-completions/cd
+use github.com/zzamboni/elvish-completions/git
+use github.com/zzamboni/elvish-completions/ssh
+
