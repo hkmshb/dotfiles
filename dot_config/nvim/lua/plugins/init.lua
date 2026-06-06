@@ -209,6 +209,16 @@ return {
     end,
   },
   {
+    "nicolasgb/jj.nvim",
+    version = "*", -- Use latest stable release
+    lazy = false,
+    -- Or from the main branch (uncomment the branch line and comment the version line)
+    -- branch = "main",
+    config = function()
+      require("jj").setup {}
+    end,
+  },
+  {
     "olimorris/codecompanion.nvim",
     lazy = false,
     dependencies = {

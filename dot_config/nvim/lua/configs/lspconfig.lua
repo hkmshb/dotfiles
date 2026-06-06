@@ -3,7 +3,7 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local servers = { "cssls", "html", "gopls", "pyright", "ts_ls" }
+local servers = { "cssls", "gopls", "pyright", "ts_ls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -15,6 +15,17 @@ for _, lsp in ipairs(servers) do
 
   vim.lsp.enable(lsp)
 end
+
+vim.lsp.config("html", {
+  on_init = on_init,
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    html = {
+      wrapAttributes = "preserve",
+    },
+  },
+})
 
 vim.lsp.config("jqls", {})
 vim.lsp.enable "jqls"
