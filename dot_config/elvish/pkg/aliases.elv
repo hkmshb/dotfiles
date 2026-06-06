@@ -40,10 +40,12 @@ edit:add-var .gb~      {|@a| git-bug $@a}
 edit:add-var .gbb~     {|@a| git-bug bridge $@a}
 
 # jujutsu
-edit:add-var jj.d~     {|@a| jj desc -m $@a}
+edit:add-var jj.d~     {|@a| jj desc $@a}
 edit:add-var jj.df~    {|@a| jj diff $@a}
 edit:add-var jj.e~     {|@a| jj edit $@a}
 edit:add-var jj.l~     {|@a| jj log -r 'all()' -n 10 $@a}
+edit:add-var jj.ll~    {|@a| jj log -r 'all()' $@a}
+edit:add-var jj.lb~    {|@a| jj log -r 'root()..@' $@a}
 edit:add-var jj.n~     {|@a| jj new $@a}
 edit:add-var jj.s~     {|@a| jj st $@a}
 edit:add-var jj.~      {|@a| jj st $@a}

@@ -6,6 +6,8 @@ for dir [paths.elv completions.elv] {
 
 # NOTE: the following use directives are required to have modules available 
 # within interactive terminals even if not used directly within this script
+#
+# DO NOT REARRANGE
 use git
 use re
 use sys
