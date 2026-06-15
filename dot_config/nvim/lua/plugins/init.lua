@@ -59,6 +59,59 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      -- Neovim 0.12 changed match[id] from a single TSNode to a list of nodes.
+      -- nvim-treesitter master hasn't adapted, so directives crash with
+      -- "attempt to call method 'range' (a nil value)". Re-register the affected
+      -- directives with an unwrap shim. Survives :Lazy update.
+      local query = require "vim.treesitter.query"
+      local force = vim.fn.has "nvim-0.10" == 1 and { force = true, all = false } or true
+      local function get_node(match, id)
+        local v = match[id]
+        if type(v) == "table" then return v[1] end
+        return v
+      end
+
+      local html_script_type_languages = {
+        importmap = "json",
+        module = "javascript",
+        ["application/ecmascript"] = "javascript",
+        ["text/ecmascript"] = "javascript",
+      }
+      local md_alias = { ex = "elixir", pl = "perl", sh = "bash", uxn = "uxntal", ts = "typescript" }
+
+      query.add_directive("set-lang-from-mimetype!", function(match, _, bufnr, pred, metadata)
+        local node = get_node(match, pred[2])
+        if not node then return end
+        local val = vim.treesitter.get_node_text(node, bufnr)
+        local configured = html_script_type_languages[val]
+        if configured then
+          metadata["injection.language"] = configured
+        else
+          local parts = vim.split(val, "/", {})
+          metadata["injection.language"] = parts[#parts]
+        end
+      end, force)
+
+      query.add_directive("set-lang-from-info-string!", function(match, _, bufnr, pred, metadata)
+        local node = get_node(match, pred[2])
+        if not node then return end
+        local alias = vim.treesitter.get_node_text(node, bufnr):lower()
+        local ft = vim.filetype.match { filename = "a." .. alias }
+        metadata["injection.language"] = ft or md_alias[alias] or alias
+      end, force)
+
+      query.add_directive("downcase!", function(match, _, bufnr, pred, metadata)
+        local id = pred[2]
+        local node = get_node(match, id)
+        if not node then return end
+        local text = vim.treesitter.get_node_text(node, bufnr, { metadata = metadata[id] }) or ""
+        if not metadata[id] then metadata[id] = {} end
+        metadata[id].text = string.lower(text)
+      end, force)
+    end,
     opts = {
       -- source: github.com/nvim-treesitter/nvim-treesitter
       -- target: code highlighting, folding, indentation
