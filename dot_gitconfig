@@ -2,7 +2,7 @@
 [hub]
     protocol = https
 [alias]
-    count   = !git shortlog -sn
+    count = !git shortlog -sn
 [color]
     diff = auto
     status = auto

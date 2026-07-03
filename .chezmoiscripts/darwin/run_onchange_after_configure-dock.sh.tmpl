@@ -26,19 +26,20 @@ done
 
 
 declare -a add_labels=(
-  /System/Applications/Podcasts.app
   /Applications/iTerm.app
-  /Applications/Ghostty.app
   /Applications/Slack.app
+  /Applications/Logseq.app
+  /Applications/Bitwarden.app
+{{- if not .focused -}}
+  /System/Applications/Podcasts.app
   /Applications/Orion.app
   /Applications/Safari.app
   /Applications/Numbers.app
   /System/Applications/Calendar.app
   /System/Applications/Books.app
-  /Applications/Logseq.app
   /System/Applications/Freeform.app
   /Applications/TickTick.app
-  /Applications/Bitwarden.app
+{{- end -}}
 )
 
 for label in "${add_labels[@]}"; do

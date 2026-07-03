@@ -70,7 +70,9 @@ return {
       local force = vim.fn.has "nvim-0.10" == 1 and { force = true, all = false } or true
       local function get_node(match, id)
         local v = match[id]
-        if type(v) == "table" then return v[1] end
+        if type(v) == "table" then
+          return v[1]
+        end
         return v
       end
 
@@ -84,7 +86,9 @@ return {
 
       query.add_directive("set-lang-from-mimetype!", function(match, _, bufnr, pred, metadata)
         local node = get_node(match, pred[2])
-        if not node then return end
+        if not node then
+          return
+        end
         local val = vim.treesitter.get_node_text(node, bufnr)
         local configured = html_script_type_languages[val]
         if configured then
@@ -97,7 +101,9 @@ return {
 
       query.add_directive("set-lang-from-info-string!", function(match, _, bufnr, pred, metadata)
         local node = get_node(match, pred[2])
-        if not node then return end
+        if not node then
+          return
+        end
         local alias = vim.treesitter.get_node_text(node, bufnr):lower()
         local ft = vim.filetype.match { filename = "a." .. alias }
         metadata["injection.language"] = ft or md_alias[alias] or alias
@@ -106,9 +112,13 @@ return {
       query.add_directive("downcase!", function(match, _, bufnr, pred, metadata)
         local id = pred[2]
         local node = get_node(match, id)
-        if not node then return end
+        if not node then
+          return
+        end
         local text = vim.treesitter.get_node_text(node, bufnr, { metadata = metadata[id] }) or ""
-        if not metadata[id] then metadata[id] = {} end
+        if not metadata[id] then
+          metadata[id] = {}
+        end
         metadata[id].text = string.lower(text)
       end, force)
     end,
@@ -272,36 +282,10 @@ return {
     end,
   },
   {
-    "olimorris/codecompanion.nvim",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    opts = {
-      opts = {
-        log_level = "DEBUG", -- or "TRACE"
-      },
-    },
+    "ngynkvn/gotmpl.nvim",
     config = function()
-      require("codecompanion").setup {
-        adapters = {
-          acp = {
-            opencode = function()
-              return require("codecompanion.adapters").extend("opencode", {
-                defaults = {
-                  mode = "plan",
-                  mcpServers = "inherit_from_config",
-                },
-              })
-            end,
-          },
-        },
-        interactions = {
-          chat = {
-            adapter = "opencode",
-          },
-        },
+      require("gotmpl").setup {
+        -- Your custom settings if needed
       }
     end,
   },

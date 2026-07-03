@@ -3,7 +3,7 @@
 # create project dirs
 # --------------------------------------------------------
 
-folders=("eha" "foss" "hazel")
+folders=("ash", "foss" "hazel", "work")
 for folder in "${folders[@]}"; do
   mkdir -p ~/projects/$folder
 done
@@ -12,7 +12,7 @@ done
 # symlink elvish scripts 
 # --------------------------------------------------------
 if [ -d ~/.config/elvish ]; then
-  ln -s ~/.config/elvish ~/projects/hazel/
+  ln -s ~/.config/elvish ~/projects/ash/
 fi
 
 

@@ -2,16 +2,45 @@
 {{- $ephemeral := false -}} {{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
 {{- $headless := false  -}} {{/* true if this machine does not have a screen and keyboard */}}
 {{- $personal := false  -}} {{/* true if this machine should have personal secrets */}}
+{{- $work := false      -}} {{/* true if this machie is a work machine */}}
+
+
+{{/* determine machine role from hostname */}}
+{{- $role := env "MACHINE_ROLE" -}}
+{{- if not $role -}}
+{{-   $choices := list "work" "personal" "cloud-vm" "local-vm" -}}
+{{-   $role = promptChoice "role" "Select the role for this machine" $choices -}}
+{{- end -}}
+
+{{/* determine usage mode - general or focused (work only) use */}}
+{{- $focused := promptBoolOnce . "focused" "Setup for deep work?" false -}}
+
+{{/* detech Docker containers */}}
+{{- if or (eq $role "cloud-vm" "local-vm") (eq .chezmoi.username "root" "ubuntu") -}}
+{{-   $ephemeral = true -}}
+{{-   $headless = true -}}
+{{- end -}}
+
+
+{{- if not $ephemeral -}}
+{{-   if eq $role "work" -}}
+{{-     $work = true -}}
+{{-   else if eq $role "personal" -}}
+{{-     $personal = true -}}
+{{-   end -}}
+{{- end -}}
 
 {{- $email := "s.abdulhakeeem@gmail.com" -}}
-{{- if not $personal -}}
+{{- if $work -}}
 {{-   $email = "abdulhakeem.shaibu@ehealthnigeria.org" -}}
 {{- end -}}
 
 [data]
     ephemeral = {{ $ephemeral }}
     email = {{ $email | quote }}
+    focused = {{ $focused }}
     headless = {{ $headless }}
     personal = {{ $personal }}
+    work = {{ $work }}
     homebrew_etc_dir = "/opt/homebrew/etc"
     homebrew_var_dir = "/opt/homebrew/var"
