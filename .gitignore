@@ -1,3 +1,6 @@
 .log
 [_.]tmp/
 */jj/repos/
+
+.git
+.jj

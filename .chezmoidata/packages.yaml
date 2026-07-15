@@ -1,77 +1,75 @@
 packages:
-  focused:
-    brews:
+  cloud:
+    brew:
       - bash
+      - elvish
+      - git
+      - nvim
+      - wget
+    cask:
+      - podman-desktop
+
+  core:
+    brew:
+      - act
       - croc
       - colima
       - direnv
-      - dockutil
-      - docker-compose
-      - elvish
       - gibo
-      - git
+      - mise
+      - opencode
+      - pnpm
+      - rbw
+      - umlet
+    cask:
+      - bitwarden
+      - bruno
+      - ghostty
       - k3d
       - lima
       - lima-additional-guestagents
-      - mise
-      - nvim
-      - rbw
-      - umlet
-      - wget
-      - yarn
+      - logseq
+      - ticktick
 
-    casks:
-      cli:
-        - font-ubuntu-mono-nerd-font
-        - claude-code
-        - iterm2
-        - ngrok
-      gui:
-        - battery
-        - bruno
-        - bitwarden
-        - docker-desktop
-        - flux
-        - google-drive
-        - logseq
-        - neardrop
-        - pgadmin4
-        - podman-desktop
-        - slack
-        - tunnelbear
-        - zoom
+  home:
+    brew:
+      - dockutil
+    cask:
+      - battery
+      - discord
+      - flux
+      - font-ubuntu-mono-nerd-font
+      - google-drive
+      - neardrop
+      - pgadmin4
+      - slack
+      - tunnelbear
+      - zed
+      - zoom
 
-  extras:
-    brews:
-      - act
-      - hunspell
+  chill:
+    brew:
       - yt-dlp
+    cask:
+      - megasync
+      - telegram
+      - whatsapp
+      - vlc
 
-    casks:
-      cli:
-        - hammerspoon
-      gui:
-        - sqlitestudio
-        - discord
-        - http-toolkit
-        - lastpass
-        - megasync
-        - orion
-        - pomatez
-        - telegram
-        - ticktick
-        - windsurf
-        - zed
-   
+  work:
+    brew:
+      - claude-code
+      - docker-compose
+      - lastpass
+      - yarn
+    cask:
+      - docker-desktop
+      - iterm2
+      - orion
+      - qgis
+
   large:
-    brews:
     casks:
-      cli:
-        - 'zulu@17'
-      gui:
-        - android-studio
-        - darktable
-        - dbeaver-community
-        - libreoffice
-        - qgis
-        - vlc
+      - 'zulu@17'
+      - android-studio
+      - libreoffice

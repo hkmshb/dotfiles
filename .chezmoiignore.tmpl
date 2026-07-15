@@ -1,0 +1,41 @@
+[._]tmp/
+config/
+r/
+
+
+{{ if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/darwin/**
+{{ end }}
+
+
+{{/* dot_config
+  ------------------------------------------ */}}
+{{- if .headless -}}
+.config/direnv
+.config/ghostty
+.config/iterm2
+.config/jj
+.config/mise
+.config/starship.toml
+{{ else -}}
+  {{- if not .work -}}
+.config/iterm2
+  {{- end -}}
+{{ end -}}
+
+
+{{/* dot_gitconfig, dot_ssh
+  ------------------------------------------ */}}
+{{- if not .personal -}}
+.ssh/private_id_ed25519.*
+.ssh/private_id_rsa.*
+
+.gitconfig.hazel
+{{ end -}}
+
+{{- if not .work -}}
+.ssh/private_id_ed25519_eha.*
+
+.gitconfig.eha
+{{ end -}}
+

@@ -8,9 +8,6 @@
     status = auto
     branch = auto
     ui = true
-[user]
-    email = s.abdulhakeeem@gmail.com
-    name = Abdulhakeem Shaibu
 [core]
     excludesfile = ~/.gitignore
     editor = vi
@@ -38,7 +35,12 @@
     rebase = false
 [init]
     defaultBranch = main
+
+{{- if .personal -}}
 [includeIf "gitdir:~/projects/"]
     path = ~/.gitconfig.hazel
+{{- end -}}
+{{- if .work -}}
 [includeIf "gitdir:~/projects/eha/"]
     path = ~/.gitconfig.eha
+{{- end -}}

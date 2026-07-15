@@ -1,0 +1,29 @@
+{{/* boolean feature tags */}}
+{{- $headless := false  -}} {{/* true if this machine does not have a screen and keyboard */}}
+{{- $personal := false  -}} {{/* true if this machine should have personal secrets */}}
+{{- $work     := false  -}} {{/* true if this machine is a work machine */}}
+{{- $email    := ""     -}}
+
+{{- $choices := list "workstation" "vm" -}}
+{{- $role := promptChoice "Select the role for this machine" $choices -}}
+{{- if (eq $role "vm") -}}
+{{-   $headless = true -}}
+{{- end -}}
+
+{{- if not $headless -}}
+{{-   $personal = (promptBool "Include personal secrets") -}}
+{{-   $work     = (promptBool "Is work machine" false) -}}
+{{-   $email    = "s.abdulhakeeem@gmail.com" -}}
+{{-   if $work -}}
+{{-     $email = (promptString "Work email") }}
+{{-   end -}}
+{{- end -}}
+
+[data]
+    email = {{ $email | quote }}
+    headless = {{ $headless }}
+    personal = {{ $personal }}
+    work = {{ $work }}
+    homebrew_etc_dir = "/opt/homebrew/etc"
+    homebrew_var_dir = "/opt/homebrew/var"
+
