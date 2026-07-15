@@ -1,0 +1,30 @@
+#!/bin/bash
+
+
+{{- define "install-pkgs" -}}
+  {{- range $pkg := .brew -}}
+  brew {{. | quote}}
+  {{ end -}}
+
+  {{- range $pkg := .cask -}}
+  cask {{. | quote}}
+  {{ end -}}
+{{- end -}}
+
+
+# default installation - focused pkgs
+brew bundle -v --file=/dev/stdin <<EOF
+{{ template "install-pkgs" .packages.cloud }}
+
+{{- if and (not .headless) -}}
+  {{ template "install-pkgs" .packages.core }}
+  {{ template "install-pkgs" .packages.home }}
+
+  {{- if not .personal -}}
+    {{ template "install-pkgs" .packages.work }}
+  {{- end -}}
+{{- end -}}
+EOF
+
+## install/update mise packages
+# mise install && mise outdated -l
