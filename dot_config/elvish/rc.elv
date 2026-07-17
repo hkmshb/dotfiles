@@ -8,19 +8,41 @@ for dir [envs.elv completions.elv] {
 # within interactive terminals even if not used directly within this script
 #
 # DO NOT REARRANGE
+use path
+
 use git
 use re
 use sys
-
 use eha
+
+
+## ghostty integration 
+## -------------------
+
+# set titlebar with these
+fn update-title { printf "\e]2;%s\a" (path:base $pwd) }
+set after-chdir = (conj $after-chdir {|_| update-title })
+update-title
+
+# load ghostty shell integration (cwd reporting for tab/split inheritance,
+# prompt marks, cursor shape, sudo terminfo)
+if (has-env GHOSTTY_RESOURCES_DIR) {
+  eval (slurp < $E:GHOSTTY_RESOURCES_DIR/shell-integration/elvish/lib/ghostty-integration.elv)
+}
+
+# lua ------------
+# Safely set LUA_INIT with proper Elvish single-quote string escaping
+# set E:LUA_INIT = 'package.path = package.path .. '';/Users/abdulhakeem/.local/share/mise/installs/lua/5.1/share/lua/5.1/?.lua;/Users/abdulhakeem/.local/share/mise/installs/lua/5.1/share/lua/5.1/?/init.lua'''
 
 ## activate tools
 ## ---------------
 
-# active mise-en-place
-var -m: = (ns [&])
-eval (mise activate elvish | slurp) &ns=$-m: &on-end={|ns| set -m: = $ns }
--m:activate
+## active mise-en-place
+#var -m: = (ns [&])
+#eval (mise activate elvish | slurp) &ns=$-m: &on-end={|ns| set -m: = $ns }
+#-m:activate
+
+set paths = [~/.local/share/mise/shims $@paths]
 
 # tool initializations
 eval (direnv hook elvish | slurp)

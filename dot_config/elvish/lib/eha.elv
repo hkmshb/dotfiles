@@ -8,7 +8,7 @@ use path
 use sys
 
 var proj-dir = $E:PROJECTS/eha
-var conf-dir  = $proj-dir/:cfg
+var conf-dir  = $proj-dir/_secrets
 
 # fetch gcp service-account credentials from secrets vault (bitwarden) and save
 # to designated location for eha dev credentials

@@ -1,3 +1,4 @@
+use flag
 use os
 use path
 use str
@@ -55,21 +56,62 @@ fn load-ini {|@path|
 }
 
 # scaffold a new project
-fn scaffold {|name|
+fn scaffold {|name &lang=''|
+  var target-langs = [&go=$true]
+  if (not (has-key $target-langs $lang)) {
+    var names = [(keys $target-langs)]
+    echo (styled 'lang "'$lang'" unknown. expected any of: '(str:join ',' $names) red)
+    exit 1
+  }
+
+  # ensure target folder/project doesn't already exist
   var proj-dir = (pwd)'/'$name
   if (os:exists $proj-dir) {
     echo (styled $proj-dir' already exist. operation aborted' yellow)
     return
   }
-
-  # create project folder and necessary files
-  echo (styled 'creating project scaffold ...' cyan)
-  mkdir -p $proj-dir/{docs}
-  touch $proj-dir/{.gitignore,.editorconfig,.justfile,README.md}
   
+  # create project folder and necessary files
+  echo (styled '... creating project scaffold' cyan)
+  mkdir -p $proj-dir/{.log/pm,docs}
+  touch $proj-dir/{.gitignore,.editorconfig,.justfile,README.md}
+
+  # set default contents for editorconfig & justfile
+  echo (styled '... add content:.editorconfig' cyan)
+  echo (str:join "\n" [
+    "root = true\n"
+    "[*]"
+    "charset = utf-8"
+    "indent_size = 2"
+    "indent_style = space"
+    "trim_trailing_whitespace = true"
+    "insert_final_newline = true"
+  ]) > $proj-dir/.editorconfig
+
+  echo (styled '... add content: .justfile' cyan)
+  echo (str:join "\n" [
+    "default:"
+    "  just -l\n"
+    "init:"
+    "  echo 'pending...'\n"
+  ]) > $proj-dir/.justfile
+
   # init git
+  echo (styled '... initializing git' cyan)
   jj git init $proj-dir
 
+  # scaffold for target language
+  if (==s $lang "go") {
+    # set gitignore for go
+    echo (styled '... set .gitignore for go' cyan)
+    gibo dump go > $proj-dir/.gitignore
+ 
+    # create go module
+    echo (styled '... creating go module' cyan)
+    go mod init -C $name 'hazeltek.net/p/'$name
+  }
+
   # done
-  echo (styled 'scaffold created', cyan)
+  echo (styled 'scaffold created' cyan)
 }
+

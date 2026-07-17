@@ -44,6 +44,7 @@ set paths = [
   $E:ANDROID_SDK_ROOT/emulator
   $E:ANDROID_SDK_ROOT/platform-tools
   $E:CZROOT/r/bin
+  $E:PNPM_HOME/bin
   $E:PNPM_HOME
   $E:BUN_BIN
   $E:GOBIN
