@@ -2,10 +2,10 @@
 
 # create project dirs
 # --------------------------------------------------------
-{{ if and (not .headless) }}
+{{ if not .headless }}
 folders=("ash" "docs" "foss")
-{{ if .personal }}folders+=("hazel"){{ end }}
-{{ if .work }}folders+=("work"){{ end }}
+{{ if .personal }}folders+=("hazel"){{ end -}}
+{{ if .work }}folders+=("work"){{ end -}}
 for folder in "${folders[@]}"; do
   mkdir -p ~/projects/$folder
 done
@@ -15,7 +15,7 @@ done
 if [ -d ~/.config/elvish ]; then
   ln -s ~/.config/elvish ~/projects/ash/
 fi
-{{- end -}}
+{{- end }}
 
 
 # set shell
@@ -30,7 +30,11 @@ if command -v elvish >/dev/null 2>&1; then
     echo $ELVISH_PATH >> /etc/shells
   fi
 
+  # install third-party modules
+  elvish -c "use epm; epm:install github.com/zzamboni/elvish-modules"
+
   # set default shell
+  grep -qxF "$(which elvish)" /etc/shells || echo "$(which elvish)" | sudo tee -a /etc/shells
   chsh -s $(which elvish)
 fi
 

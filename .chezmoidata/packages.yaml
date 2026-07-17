@@ -2,10 +2,15 @@ packages:
   cloud:
     brew:
       - bash
+      - direnv
       - elvish
       - git
+      - lsd
+      - mise
       - nvim
+      - starship
       - wget
+      - zoxide
     cask:
       - podman-desktop
 
@@ -14,9 +19,7 @@ packages:
       - act
       - croc
       - colima
-      - direnv
       - gibo
-      - mise
       - opencode
       - pnpm
       - rbw
@@ -30,6 +33,8 @@ packages:
       - lima-additional-guestagents
       - logseq
       - ticktick
+      - utm
+      - vagrant
 
   home:
     brew:

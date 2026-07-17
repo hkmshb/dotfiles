@@ -1,6 +1,6 @@
 # source local '-' prefixed scripts for side effect
 var pkg-dir = ~/.config/elvish/pkg
-for dir [paths.elv completions.elv] {
+for dir [envs.elv completions.elv] {
   eval (slurp < $pkg-dir/$dir)
 }
 
@@ -23,7 +23,7 @@ eval (mise activate elvish | slurp) &ns=$-m: &on-end={|ns| set -m: = $ns }
 -m:activate
 
 # tool initializations
-eval (direnv hook $E:SHELL | slurp)
+eval (direnv hook elvish | slurp)
 eval (zoxide init elvish | slurp)
 eval (starship init elvish)
 

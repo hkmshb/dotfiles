@@ -3,8 +3,12 @@ config/
 r/
 
 
-{{ if ne .chezmoi.os "darwin" }}
+{{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
+{{ end }}
+
+{{- if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**
 {{ end }}
 
 
@@ -27,14 +31,17 @@ r/
 {{/* dot_gitconfig, dot_ssh
   ------------------------------------------ */}}
 {{- if not .personal -}}
-.ssh/private_id_ed25519.*
-.ssh/private_id_rsa.*
+.ssh/id_ed25519.pub
+.ssh/id_ed25519
+.ssh/id_rsa.pub
+.ssh/id_rsa
 
 .gitconfig.hazel
 {{ end -}}
 
 {{- if not .work -}}
-.ssh/private_id_ed25519_eha.*
+.ssh/id_ed25519_eha.pub
+.ssh/id_ed25519_eha
 
 .gitconfig.eha
 {{ end -}}

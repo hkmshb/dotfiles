@@ -1,5 +1,13 @@
 #!/usr/bin/env elvish
 
+# env-vars 
+# --------------------------------------------
+set E:TERM      = xterm-256color
+
+
+# paths
+# --------------------------------------------
+
 ## misc
 set E:CZROOT    = $E:HOME/.local/share/chezmoi
 set E:PROJECTS  = $E:HOME/projects
@@ -24,7 +32,6 @@ set E:BUN_BIN      = $E:HOME/.bun/bin
 # set E:DOCKER_HOST = ssh://core@localhost:63336
 set E:DOCKER_SOCK = /run/user/503/podman/podman.sock
 
-
 set paths = [
   /bin
   /sbin
@@ -33,6 +40,7 @@ set paths = [
   /usr/local/bin
   /usr/local/sbin
   /opt/homebrew/bin
+  $E:HOME/.local/bin
   $E:ANDROID_SDK_ROOT/emulator
   $E:ANDROID_SDK_ROOT/platform-tools
   $E:CZROOT/r/bin

@@ -16,7 +16,7 @@
 brew bundle -v --file=/dev/stdin <<EOF
 {{ template "install-pkgs" .packages.cloud }}
 
-{{- if and (not .headless) -}}
+{{- if not .headless -}}
   {{ template "install-pkgs" .packages.core }}
   {{ template "install-pkgs" .packages.home }}
 
