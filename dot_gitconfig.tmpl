@@ -36,11 +36,11 @@
 [init]
     defaultBranch = main
 
-{{- if .personal -}}
+{{- if .personal }}
 [includeIf "gitdir:~/projects/"]
     path = ~/.gitconfig.hazel
-{{- end -}}
-{{- if .work -}}
+{{- end }}
+{{- if .work }}
 [includeIf "gitdir:~/projects/eha/"]
     path = ~/.gitconfig.eha
-{{- end -}}
+{{- end }}

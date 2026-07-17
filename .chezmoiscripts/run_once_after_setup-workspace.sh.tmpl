@@ -12,7 +12,7 @@ done
 
 # symlink elvish scripts 
 # --------------------------------------------------------
-if [ -d ~/.config/elvish ]; then
+if [ -d ~/.config/elvish ] && [ ! -d ~/projects/ash ]; then
   ln -s ~/.config/elvish ~/projects/ash/
 fi
 {{- end }}
