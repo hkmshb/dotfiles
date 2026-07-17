@@ -23,13 +23,10 @@ fi
      "avahi-daemon"
      "bash"
      "direnv"
-     "elvish"
      "lsd"
      "mise"
      "neovim"
-     "podman"
-     "starship"
-     "wget" -}}
+     "podman" -}}
 
 {{- if not .headless }}
    $packages = concat $packages (list
@@ -37,5 +34,5 @@ fi
 {{- end }}
 
 {{ $sudo }}apt-get update
-{{ $sudo }}apt-get install -y {{ $packages | join " " }}
+{{ $sudo }}apt-get install --no-install-recommends -y {{ $packages | join " " }}
 

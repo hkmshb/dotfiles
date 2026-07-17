@@ -22,10 +22,13 @@ fi
 # --------------------------------------------------------
 
 # check that elvish is installed
-if command -v elvish >/dev/null 2>&1; then
-  ELVISH_PATH=$(command -v elvish)
-  
+if ! command -v elvish >/dev/null 2>&1; then
+  # install elvish
+  curl -so - https://dl.elv.sh/linux-arm64/elvish-HEAD.tar.gz | sudo tar -xzvC /usr/local/bin
+
   # check if elvish is already listed  in /etc/shells
+  ELVISH_PATH=$(command -v elvish)
+
   if ! grep -Fx $ELVISH_PATH /etc/shells >/dev/null; then
     echo $ELVISH_PATH >> /etc/shells
   fi

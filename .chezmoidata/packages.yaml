@@ -3,7 +3,6 @@ packages:
     brew:
       - bash
       - direnv
-      - elvish
       - git
       - lsd
       - mise
