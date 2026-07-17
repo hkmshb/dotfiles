@@ -4,14 +4,11 @@ go_set_gobin = false
 idiomatic_version_file_enable_tools = ["python"]
 
 [tools]
-# langs/runtimes
-bun = "1.3.14"
 deno = "2.9"
-go = "1.25"
+go = "1.26"
 janet = "1.41"
 node = "22"
 python = "3.14"
-racket = "9.2"
 ruby = "2.7"
 rust = "1.96"
 zig = "0.16"
@@ -24,7 +21,6 @@ pnpm = "11.10"
 # linters
 air = "1.65"
 bat = "0.26"
-curlie = "1.8"
 terraform = "1.15"
 task = "3.52"
 jq = "latest"
@@ -50,14 +46,15 @@ lefthook = "2.1"
 opencode = "1.18"
 gh = "2.95"
 acli = "1.3"
-pi = "0.80"
 
 # cloud:gcp
 cloud-sql-proxy = "2.23"
 firebase = "15.23"
-gcloud = "576.0"
+gcloud = "574.0"
 zoxide = "0.10"
 starship = "1.26"
+lua = "5.1"
+prek = "0.4"
 
 
 [env]

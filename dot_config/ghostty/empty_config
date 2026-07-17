@@ -1,3 +1,0 @@
-macos-titlebar-style = tabs
-macos-titlebar-proxy-icon = hidden
-shell-integration-features = cursor,no-sudo,no-title,no-ssh-env,no-ssh-terminfo,path
