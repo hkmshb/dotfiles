@@ -30,7 +30,6 @@ declare -a add_labels=(
   /Applications/Slack.app
   /Applications/Logseq.app
   /Applications/Bitwarden.app
-{{- if not .focused -}}
   /System/Applications/Podcasts.app
   /Applications/Orion.app
   /Applications/Safari.app
@@ -39,7 +38,6 @@ declare -a add_labels=(
   /System/Applications/Books.app
   /System/Applications/Freeform.app
   /Applications/TickTick.app
-{{- end -}}
 )
 
 for label in "${add_labels[@]}"; do

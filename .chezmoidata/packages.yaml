@@ -20,6 +20,9 @@ packages:
       - croc
       - colima
       - gibo
+      - k3d
+      - lima
+      - lima-additional-guestagents
       - opencode
       - pnpm
       - rbw
@@ -28,9 +31,6 @@ packages:
       - bitwarden
       - bruno
       - ghostty
-      - k3d
-      - lima
-      - lima-additional-guestagents
       - logseq
       - ticktick
       - utm
@@ -42,10 +42,9 @@ packages:
     cask:
       - battery
       - discord
-      - flux
+      - flux-app
       - font-ubuntu-mono-nerd-font
       - google-drive
-      - neardrop
       - pgadmin4
       - slack
       - tunnelbear

@@ -23,7 +23,7 @@ brew bundle -v --file=/dev/stdin <<EOF
   {{- if not .personal -}}
     {{ template "install-pkgs" .packages.work }}
   {{- end -}}
-{{- end -}}
+{{- end }}
 EOF
 
 ## install/update mise packages

@@ -4,8 +4,8 @@
 # --------------------------------------------------------
 {{ if not .headless }}
 folders=("ash" "docs" "foss")
-{{ if .personal }}folders+=("hazel"){{ end -}}
-{{ if .work }}folders+=("work"){{ end -}}
+{{ if .personal }}folders+=("hazel"){{ end }}
+{{ if .work }}folders+=("work"){{ end }}
 for folder in "${folders[@]}"; do
   mkdir -p ~/projects/$folder
 done
