@@ -19,7 +19,7 @@ zig = "0.16"
 # pkg managers
 uv = "0.11"
 pipx = "latest"
-pnpm = "11.9"
+pnpm = "11.10"
 
 # linters
 air = "1.65"
@@ -42,7 +42,7 @@ ruff = "0.15"
 fzf = "0.74"
 helm = "4.2"
 lsd = "1.2"
-ollama = "0.30"
+ollama = "0.31"
 jujutsu = "0.43"
 typst = "0.15"
 jless = "0.9"
@@ -56,6 +56,8 @@ pi = "0.80"
 cloud-sql-proxy = "2.23"
 firebase = "15.23"
 gcloud = "576.0"
+zoxide = "0.10"
+starship = "1.26"
 
 
 [env]

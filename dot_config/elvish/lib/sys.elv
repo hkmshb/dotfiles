@@ -1,4 +1,5 @@
 use os
+use path
 use str
 
 # get the host ip-address
@@ -51,4 +52,24 @@ fn load-ini {|@path|
   )]
 
   put $data
+}
+
+# scaffold a new project
+fn scaffold {|name|
+  var proj-dir = (pwd)'/'$name
+  if (os:exists $proj-dir) {
+    echo (styled $proj-dir' already exist. operation aborted' yellow)
+    return
+  }
+
+  # create project folder and necessary files
+  echo (styled 'creating project scaffold ...' cyan)
+  mkdir -p $proj-dir/{docs}
+  touch $proj-dir/{.gitignore,.editorconfig,.justfile,README.md}
+  
+  # init git
+  jj git init $proj-dir
+
+  # done
+  echo (styled 'scaffold created', cyan)
 }
