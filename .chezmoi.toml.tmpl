@@ -5,17 +5,17 @@
 {{- $email    := ""     -}}
 
 {{- $choices := list "workstation" "vm" -}}
-{{- $role := promptChoice "Select the role for this machine" $choices -}}
+{{- $role := promptChoiceOnce . "role" "Select the role for this machine" $choices -}}
 {{- if (eq $role "vm") -}}
 {{-   $headless = true -}}
 {{- end -}}
 
 {{- if not $headless -}}
-{{-   $personal = (promptBool "Include personal secrets") -}}
-{{-   $work     = (promptBool "Is work machine" false) -}}
+{{-   $personal = (promptBoolOnce . "personal" "Include personal secrets") -}}
+{{-   $work     = (promptBoolOnce . "work" "Is work machine" false) -}}
 {{-   $email    = "s.abdulhakeeem@gmail.com" -}}
 {{-   if $work -}}
-{{-     $email = (promptString "Work email") }}
+{{-     $email = (promptStringOnce . "email" "Work email") }}
 {{-   end -}}
 {{- end -}}
 
