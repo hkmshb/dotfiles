@@ -1,0 +1,41 @@
+# -- prefix key -----
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# -- general settings -----
+set -g mouse on
+set -g base-index 1
+setw -g pane-base-index 1
+set -g renumber-windows on
+
+# reload config file
+bind r source-file ~/.tmux.conf
+
+# -- panes + windows -----
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+# switch panes using Alt-arrow without prefix
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# switch windows
+bind-key -n S-M-Left previous-window
+bind-key -n S-M-Right next-window
+
+# -- terminal colors -----
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+
+{{/* ------------------------------------------------
+   | .personal indicates personal secrets available  
+   | .work indicates work machine
+   +------------------------------------------------- */}}
+{{- if not .work }}
+set -g status-style "bg=cyan, fg=black"
+{{- end }}
